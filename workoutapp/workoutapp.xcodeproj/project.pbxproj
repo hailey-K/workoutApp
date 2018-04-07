@@ -1,0 +1,798 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F298735205ACADD00F36622 /* TimerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F298734205ACADD00F36622 /* TimerListViewController.swift */; };
+		5F29A120205AD84C00282E79 /* WorkoutListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29A11F205AD84C00282E79 /* WorkoutListViewController.swift */; };
+		5F29A126205ADC5500282E79 /* WorkoutItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29A125205ADC5500282E79 /* WorkoutItemListViewController.swift */; };
+		5F29A12A205B2D9900282E79 /* PlanAndMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29A129205B2D9900282E79 /* PlanAndMarkViewController.swift */; };
+		5F29A12C205B4C2900282E79 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29A12B205B4C2900282E79 /* PopupViewController.swift */; };
+		5F29A12E205B520300282E79 /* PopupNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29A12D205B520300282E79 /* PopupNoteViewController.swift */; };
+		5F29A130205B553D00282E79 /* PopupWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F29A12F205B553D00282E79 /* PopupWorkoutViewController.swift */; };
+		5F2E32DD20577C24004CB6DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2E32DC20577C24004CB6DE /* AppDelegate.swift */; };
+		5F2E32DF20577C24004CB6DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2E32DE20577C24004CB6DE /* ViewController.swift */; };
+		5F2E32E220577C24004CB6DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2E32E020577C24004CB6DE /* Main.storyboard */; };
+		5F2E32E420577C24004CB6DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2E32E320577C24004CB6DE /* Assets.xcassets */; };
+		5F2E32E720577C24004CB6DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2E32E520577C24004CB6DE /* LaunchScreen.storyboard */; };
+		5F7D48D4206099DE0010E37F /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D48D3206099DE0010E37F /* StopwatchViewController.swift */; };
+		5FC3D39A20683C4400A9212F /* DBUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D39920683C4400A9212F /* DBUtil.swift */; };
+		5FC3D39F2068420500A9212F /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D39E2068420500A9212F /* ResultModel.swift */; };
+		5FC3D3A52068474100A9212F /* StopwatchDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D3A42068474100A9212F /* StopwatchDB.swift */; };
+		5FC3D3A9206847A300A9212F /* LapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D3A8206847A300A9212F /* LapModel.swift */; };
+		5FC3D3C32068759F00A9212F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC3D3C22068759F00A9212F /* libsqlite3.tbd */; };
+		D206E8F3206F5D740017081F /* TimerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D206E8F2206F5D740017081F /* TimerDB.swift */; };
+		D206E8F5206F62430017081F /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D206E8F4206F62430017081F /* TimerModel.swift */; };
+		D206E8FA206F68D20017081F /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D206E8F9206F68D20017081F /* TimerViewController.swift */; };
+		D2ADC7A22071D26F007CA3AC /* TimerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */; };
+		D2ADC7A62071E54E007CA3AC /* RunTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FC3D4022068761600A9212F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E;
+			remoteInfo = fmdb;
+		};
+		5FC3D4042068761600A9212F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE4290EF12B42F870088BD94;
+			remoteInfo = FMDB;
+		};
+		5FC3D4062068761600A9212F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF5D041618416BB2008C5AA9;
+			remoteInfo = Tests;
+		};
+		5FC3D4082068761600A9212F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6290CBB5188FE836009790F8;
+			remoteInfo = "FMDB-IOS";
+		};
+		5FC3D40A2068761600A9212F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83C73EFE1C326AB000FFC730;
+			remoteInfo = "FMDB iOS";
+		};
+		5FC3D40C2068761600A9212F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83C73F0B1C326ADA00FFC730;
+			remoteInfo = "FMDB MacOS";
+		};
+		5FC3D40E2068761600A9212F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2CD2426D1FCC09CA00479FDE;
+			remoteInfo = "FMDB watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5F298734205ACADD00F36622 /* TimerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListViewController.swift; sourceTree = "<group>"; };
+		5F29A11F205AD84C00282E79 /* WorkoutListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewController.swift; sourceTree = "<group>"; };
+		5F29A125205ADC5500282E79 /* WorkoutItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemListViewController.swift; sourceTree = "<group>"; };
+		5F29A129205B2D9900282E79 /* PlanAndMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanAndMarkViewController.swift; sourceTree = "<group>"; };
+		5F29A12B205B4C2900282E79 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		5F29A12D205B520300282E79 /* PopupNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupNoteViewController.swift; sourceTree = "<group>"; };
+		5F29A12F205B553D00282E79 /* PopupWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWorkoutViewController.swift; sourceTree = "<group>"; };
+		5F2E32D920577C24004CB6DE /* workoutapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workoutapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F2E32DC20577C24004CB6DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F2E32DE20577C24004CB6DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F2E32E120577C24004CB6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F2E32E320577C24004CB6DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F2E32E620577C24004CB6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F2E32E820577C24004CB6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F7D48D3206099DE0010E37F /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
+		5FC3D39920683C4400A9212F /* DBUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUtil.swift; sourceTree = "<group>"; };
+		5FC3D39E2068420500A9212F /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		5FC3D3A42068474100A9212F /* StopwatchDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchDB.swift; sourceTree = "<group>"; };
+		5FC3D3A8206847A300A9212F /* LapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapModel.swift; sourceTree = "<group>"; };
+		5FC3D3C02068752B00A9212F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		5FC3D3C22068759F00A9212F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5FC3D3C72068761600A9212F /* Tests.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tests.xcscheme; sourceTree = "<group>"; };
+		5FC3D3C92068761600A9212F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5FC3D3CA2068761600A9212F /* FMDatabaseAdditionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditionsTests.m; sourceTree = "<group>"; };
+		5FC3D3CB2068761600A9212F /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		5FC3D3CC2068761600A9212F /* FMDBTempDBTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBTempDBTests.m; sourceTree = "<group>"; };
+		5FC3D3CD2068761600A9212F /* FMDatabasePoolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePoolTests.m; sourceTree = "<group>"; };
+		5FC3D3CE2068761600A9212F /* FMResultSetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSetTests.m; sourceTree = "<group>"; };
+		5FC3D3CF2068761600A9212F /* FMDatabaseQueueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueueTests.m; sourceTree = "<group>"; };
+		5FC3D3D02068761600A9212F /* FMDatabaseFTS3WithModuleNameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseFTS3WithModuleNameTests.m; sourceTree = "<group>"; };
+		5FC3D3D12068761600A9212F /* FMDatabaseFTS3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseFTS3Tests.m; sourceTree = "<group>"; };
+		5FC3D3D22068761600A9212F /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		5FC3D3D32068761600A9212F /* FMDBTempDBTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBTempDBTests.h; sourceTree = "<group>"; };
+		5FC3D3D42068761600A9212F /* FMDatabaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseTests.m; sourceTree = "<group>"; };
+		5FC3D3D52068761600A9212F /* CHANGES_AND_TODO_LIST.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CHANGES_AND_TODO_LIST.txt; sourceTree = "<group>"; };
+		5FC3D3D62068761600A9212F /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		5FC3D3D72068761600A9212F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5FC3D3D82068761600A9212F /* fmdb.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = fmdb.1; sourceTree = "<group>"; };
+		5FC3D3D92068761600A9212F /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = fmdb.xcodeproj; sourceTree = "<group>"; };
+		5FC3D3DD2068761600A9212F /* CONTRIBUTORS.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CONTRIBUTORS.txt; sourceTree = "<group>"; };
+		5FC3D3DE2068761600A9212F /* FMDB.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FMDB.podspec; sourceTree = "<group>"; };
+		5FC3D3DF2068761600A9212F /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		5FC3D3E32068761600A9212F /* FMDatabase+InMemoryOnDiskIO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+InMemoryOnDiskIO.h"; sourceTree = "<group>"; };
+		5FC3D3E42068761600A9212F /* FMDatabase+InMemoryOnDiskIO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+InMemoryOnDiskIO.m"; sourceTree = "<group>"; };
+		5FC3D3E62068761600A9212F /* FMDatabase+FTS3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMDatabase+FTS3.m"; sourceTree = "<group>"; };
+		5FC3D3E72068761600A9212F /* FMTokenizers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTokenizers.h; sourceTree = "<group>"; };
+		5FC3D3E82068761600A9212F /* FMTokenizers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTokenizers.m; sourceTree = "<group>"; };
+		5FC3D3E92068761600A9212F /* FMDatabase+FTS3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMDatabase+FTS3.h"; sourceTree = "<group>"; };
+		5FC3D3EA2068761600A9212F /* fts3_tokenizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fts3_tokenizer.h; sourceTree = "<group>"; };
+		5FC3D3EC2068761600A9212F /* fmdb_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmdb_Prefix.pch; sourceTree = "<group>"; };
+		5FC3D3ED2068761600A9212F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FC3D3EF2068761600A9212F /* FMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		5FC3D3F02068761600A9212F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		5FC3D3F12068761600A9212F /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		5FC3D3F22068761600A9212F /* FMDatabasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		5FC3D3F32068761600A9212F /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		5FC3D3F42068761600A9212F /* FMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		5FC3D3F52068761600A9212F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		5FC3D3F62068761600A9212F /* FMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		5FC3D3F72068761600A9212F /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		5FC3D3F82068761600A9212F /* FMDatabasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		5FC3D3F92068761600A9212F /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		5FC3D3FA2068761600A9212F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D206E8F2206F5D740017081F /* TimerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDB.swift; sourceTree = "<group>"; };
+		D206E8F4206F62430017081F /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		D206E8F9206F68D20017081F /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewCell.swift; sourceTree = "<group>"; };
+		D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimerViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F2E32D620577C24004CB6DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC3D3C32068759F00A9212F /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F29A121205ADBDD00282E79 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				5F29A11F205AD84C00282E79 /* WorkoutListViewController.swift */,
+				5F29A125205ADC5500282E79 /* WorkoutItemListViewController.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		5F29A122205ADBF600282E79 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				5F298734205ACADD00F36622 /* TimerListViewController.swift */,
+				5F7D48D3206099DE0010E37F /* StopwatchViewController.swift */,
+				D206E8F9206F68D20017081F /* TimerViewController.swift */,
+				D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */,
+				D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		5F29A124205ADC2300282E79 /* PlanAndMark */ = {
+			isa = PBXGroup;
+			children = (
+				5F29A129205B2D9900282E79 /* PlanAndMarkViewController.swift */,
+				5F29A12B205B4C2900282E79 /* PopupViewController.swift */,
+				5F29A12D205B520300282E79 /* PopupNoteViewController.swift */,
+				5F29A12F205B553D00282E79 /* PopupWorkoutViewController.swift */,
+			);
+			path = PlanAndMark;
+			sourceTree = "<group>";
+		};
+		5F2E32D020577C24004CB6DE = {
+			isa = PBXGroup;
+			children = (
+				5F2E32DB20577C24004CB6DE /* workoutapp */,
+				5F2E32DA20577C24004CB6DE /* Products */,
+				5FC3D3BF2068752B00A9212F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5F2E32DA20577C24004CB6DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F2E32D920577C24004CB6DE /* workoutapp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F2E32DB20577C24004CB6DE /* workoutapp */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D39620683BBA00A9212F /* Models */,
+				5FC3D39320667A5600A9212F /* Utility */,
+				5F2E32EE20578814004CB6DE /* Controllers */,
+				5F2E32DC20577C24004CB6DE /* AppDelegate.swift */,
+				5F2E32E020577C24004CB6DE /* Main.storyboard */,
+				5F2E32E320577C24004CB6DE /* Assets.xcassets */,
+				5F2E32E520577C24004CB6DE /* LaunchScreen.storyboard */,
+				5F2E32E820577C24004CB6DE /* Info.plist */,
+			);
+			path = workoutapp;
+			sourceTree = "<group>";
+		};
+		5F2E32EE20578814004CB6DE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F29A124205ADC2300282E79 /* PlanAndMark */,
+				5F29A122205ADBF600282E79 /* Timer */,
+				5F29A121205ADBDD00282E79 /* Workout */,
+				5F2E32DE20577C24004CB6DE /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5FC3D39320667A5600A9212F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3A32068471600A9212F /* DB */,
+				5FC3D39820683C2C00A9212F /* Common */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		5FC3D39620683BBA00A9212F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D39B2068414600A9212F /* Common */,
+				5FC3D39720683BF800A9212F /* Timer */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5FC3D39720683BF800A9212F /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3A8206847A300A9212F /* LapModel.swift */,
+				D206E8F4206F62430017081F /* TimerModel.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		5FC3D39820683C2C00A9212F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5FC3D39B2068414600A9212F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D39E2068420500A9212F /* ResultModel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5FC3D3A02068462E00A9212F /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3A42068474100A9212F /* StopwatchDB.swift */,
+				D206E8F2206F5D740017081F /* TimerDB.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		5FC3D3A32068471600A9212F /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D39920683C4400A9212F /* DBUtil.swift */,
+				5FC3D3A02068462E00A9212F /* Timer */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		5FC3D3BF2068752B00A9212F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3C42068761600A9212F /* fmdb-master */,
+				5FC3D3C22068759F00A9212F /* libsqlite3.tbd */,
+				5FC3D3C02068752B00A9212F /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FC3D3C42068761600A9212F /* fmdb-master */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3C52068761600A9212F /* Tests */,
+				5FC3D3D52068761600A9212F /* CHANGES_AND_TODO_LIST.txt */,
+				5FC3D3D62068761600A9212F /* README.markdown */,
+				5FC3D3D72068761600A9212F /* .gitignore */,
+				5FC3D3D82068761600A9212F /* fmdb.1 */,
+				5FC3D3D92068761600A9212F /* LICENSE.txt */,
+				5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */,
+				5FC3D3DD2068761600A9212F /* CONTRIBUTORS.txt */,
+				5FC3D3DE2068761600A9212F /* FMDB.podspec */,
+				5FC3D3DF2068761600A9212F /* .travis.yml */,
+				5FC3D3E02068761600A9212F /* src */,
+			);
+			name = "fmdb-master";
+			path = "../../Downloads/fmdb-master";
+			sourceTree = "<group>";
+		};
+		5FC3D3C52068761600A9212F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3C62068761600A9212F /* Schemes */,
+				5FC3D3C82068761600A9212F /* InfoPlist.strings */,
+				5FC3D3CA2068761600A9212F /* FMDatabaseAdditionsTests.m */,
+				5FC3D3CB2068761600A9212F /* Tests-Info.plist */,
+				5FC3D3CC2068761600A9212F /* FMDBTempDBTests.m */,
+				5FC3D3CD2068761600A9212F /* FMDatabasePoolTests.m */,
+				5FC3D3CE2068761600A9212F /* FMResultSetTests.m */,
+				5FC3D3CF2068761600A9212F /* FMDatabaseQueueTests.m */,
+				5FC3D3D02068761600A9212F /* FMDatabaseFTS3WithModuleNameTests.m */,
+				5FC3D3D12068761600A9212F /* FMDatabaseFTS3Tests.m */,
+				5FC3D3D22068761600A9212F /* Tests-Prefix.pch */,
+				5FC3D3D32068761600A9212F /* FMDBTempDBTests.h */,
+				5FC3D3D42068761600A9212F /* FMDatabaseTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		5FC3D3C62068761600A9212F /* Schemes */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3C72068761600A9212F /* Tests.xcscheme */,
+			);
+			path = Schemes;
+			sourceTree = "<group>";
+		};
+		5FC3D3DB2068761600A9212F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D4032068761600A9212F /* fmdb */,
+				5FC3D4052068761600A9212F /* libFMDB.a */,
+				5FC3D4072068761600A9212F /* Tests.xctest */,
+				5FC3D4092068761600A9212F /* libFMDB-IOS.a */,
+				5FC3D40B2068761600A9212F /* FMDB.framework */,
+				5FC3D40D2068761600A9212F /* FMDB.framework */,
+				5FC3D40F2068761600A9212F /* FMDB.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5FC3D3E02068761600A9212F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3E12068761600A9212F /* extra */,
+				5FC3D3EB2068761600A9212F /* sample */,
+				5FC3D3EE2068761600A9212F /* fmdb */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		5FC3D3E12068761600A9212F /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3E22068761600A9212F /* InMemoryOnDiskIO */,
+				5FC3D3E52068761600A9212F /* fts3 */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		5FC3D3E22068761600A9212F /* InMemoryOnDiskIO */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3E32068761600A9212F /* FMDatabase+InMemoryOnDiskIO.h */,
+				5FC3D3E42068761600A9212F /* FMDatabase+InMemoryOnDiskIO.m */,
+			);
+			path = InMemoryOnDiskIO;
+			sourceTree = "<group>";
+		};
+		5FC3D3E52068761600A9212F /* fts3 */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3E62068761600A9212F /* FMDatabase+FTS3.m */,
+				5FC3D3E72068761600A9212F /* FMTokenizers.h */,
+				5FC3D3E82068761600A9212F /* FMTokenizers.m */,
+				5FC3D3E92068761600A9212F /* FMDatabase+FTS3.h */,
+				5FC3D3EA2068761600A9212F /* fts3_tokenizer.h */,
+			);
+			path = fts3;
+			sourceTree = "<group>";
+		};
+		5FC3D3EB2068761600A9212F /* sample */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3EC2068761600A9212F /* fmdb_Prefix.pch */,
+				5FC3D3ED2068761600A9212F /* main.m */,
+			);
+			path = sample;
+			sourceTree = "<group>";
+		};
+		5FC3D3EE2068761600A9212F /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				5FC3D3EF2068761600A9212F /* FMDatabase.h */,
+				5FC3D3F02068761600A9212F /* FMDatabaseQueue.m */,
+				5FC3D3F12068761600A9212F /* FMResultSet.h */,
+				5FC3D3F22068761600A9212F /* FMDatabasePool.h */,
+				5FC3D3F32068761600A9212F /* FMDatabaseAdditions.m */,
+				5FC3D3F42068761600A9212F /* FMDatabase.m */,
+				5FC3D3F52068761600A9212F /* FMDatabaseQueue.h */,
+				5FC3D3F62068761600A9212F /* FMDB.h */,
+				5FC3D3F72068761600A9212F /* FMDatabaseAdditions.h */,
+				5FC3D3F82068761600A9212F /* FMDatabasePool.m */,
+				5FC3D3F92068761600A9212F /* FMResultSet.m */,
+				5FC3D3FA2068761600A9212F /* Info.plist */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F2E32D820577C24004CB6DE /* workoutapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F2E32EB20577C24004CB6DE /* Build configuration list for PBXNativeTarget "workoutapp" */;
+			buildPhases = (
+				5F2E32D520577C24004CB6DE /* Sources */,
+				5F2E32D620577C24004CB6DE /* Frameworks */,
+				5F2E32D720577C24004CB6DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = workoutapp;
+			productName = workoutapp;
+			productReference = 5F2E32D920577C24004CB6DE /* workoutapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F2E32D120577C24004CB6DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = hch_enterprise;
+				TargetAttributes = {
+					5F2E32D820577C24004CB6DE = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5F2E32D420577C24004CB6DE /* Build configuration list for PBXProject "workoutapp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F2E32D020577C24004CB6DE;
+			productRefGroup = 5F2E32DA20577C24004CB6DE /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5FC3D3DB2068761600A9212F /* Products */;
+					ProjectRef = 5FC3D3DA2068761600A9212F /* fmdb.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5F2E32D820577C24004CB6DE /* workoutapp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5FC3D4032068761600A9212F /* fmdb */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = fmdb;
+			remoteRef = 5FC3D4022068761600A9212F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5FC3D4052068761600A9212F /* libFMDB.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFMDB.a;
+			remoteRef = 5FC3D4042068761600A9212F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5FC3D4072068761600A9212F /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = 5FC3D4062068761600A9212F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5FC3D4092068761600A9212F /* libFMDB-IOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFMDB-IOS.a";
+			remoteRef = 5FC3D4082068761600A9212F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5FC3D40B2068761600A9212F /* FMDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FMDB.framework;
+			remoteRef = 5FC3D40A2068761600A9212F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5FC3D40D2068761600A9212F /* FMDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FMDB.framework;
+			remoteRef = 5FC3D40C2068761600A9212F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5FC3D40F2068761600A9212F /* FMDB.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FMDB.framework;
+			remoteRef = 5FC3D40E2068761600A9212F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F2E32D720577C24004CB6DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F2E32E720577C24004CB6DE /* LaunchScreen.storyboard in Resources */,
+				5F2E32E420577C24004CB6DE /* Assets.xcassets in Resources */,
+				5F2E32E220577C24004CB6DE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F2E32D520577C24004CB6DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F29A12A205B2D9900282E79 /* PlanAndMarkViewController.swift in Sources */,
+				5FC3D3A9206847A300A9212F /* LapModel.swift in Sources */,
+				5F29A12E205B520300282E79 /* PopupNoteViewController.swift in Sources */,
+				5F7D48D4206099DE0010E37F /* StopwatchViewController.swift in Sources */,
+				5FC3D39A20683C4400A9212F /* DBUtil.swift in Sources */,
+				5F29A130205B553D00282E79 /* PopupWorkoutViewController.swift in Sources */,
+				D2ADC7A22071D26F007CA3AC /* TimerViewCell.swift in Sources */,
+				5F29A120205AD84C00282E79 /* WorkoutListViewController.swift in Sources */,
+				5F298735205ACADD00F36622 /* TimerListViewController.swift in Sources */,
+				5F2E32DF20577C24004CB6DE /* ViewController.swift in Sources */,
+				5F29A126205ADC5500282E79 /* WorkoutItemListViewController.swift in Sources */,
+				D206E8F3206F5D740017081F /* TimerDB.swift in Sources */,
+				5FC3D39F2068420500A9212F /* ResultModel.swift in Sources */,
+				D2ADC7A62071E54E007CA3AC /* RunTimerViewController.swift in Sources */,
+				D206E8FA206F68D20017081F /* TimerViewController.swift in Sources */,
+				5F2E32DD20577C24004CB6DE /* AppDelegate.swift in Sources */,
+				D206E8F5206F62430017081F /* TimerModel.swift in Sources */,
+				5FC3D3A52068474100A9212F /* StopwatchDB.swift in Sources */,
+				5F29A12C205B4C2900282E79 /* PopupViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5F2E32E020577C24004CB6DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F2E32E120577C24004CB6DE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F2E32E520577C24004CB6DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F2E32E620577C24004CB6DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5FC3D3C82068761600A9212F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FC3D3C92068761600A9212F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F2E32E920577C24004CB6DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5F2E32EA20577C24004CB6DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F2E32EC20577C24004CB6DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9NDB2D7R5G;
+				INFOPLIST_FILE = workoutapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hch.workoutapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "workoutapp/Utility/DB/Timer/workoutapp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F2E32ED20577C24004CB6DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9NDB2D7R5G;
+				INFOPLIST_FILE = workoutapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hch.workoutapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "workoutapp/Utility/DB/Timer/workoutapp-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F2E32D420577C24004CB6DE /* Build configuration list for PBXProject "workoutapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F2E32E920577C24004CB6DE /* Debug */,
+				5F2E32EA20577C24004CB6DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F2E32EB20577C24004CB6DE /* Build configuration list for PBXNativeTarget "workoutapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F2E32EC20577C24004CB6DE /* Debug */,
+				5F2E32ED20577C24004CB6DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F2E32D120577C24004CB6DE /* Project object */;
+}
