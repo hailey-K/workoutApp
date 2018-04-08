@@ -11,7 +11,6 @@ class WorkoutItemModel
    var WorkoutItemId: Int32
    var WorkoutItemName : String
 
-    
     init(WorkoutItemId:Int32, WorkoutItemName: String)
     {
         self.WorkoutItemId = WorkoutItemId

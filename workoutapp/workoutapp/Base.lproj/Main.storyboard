@@ -520,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSr-fV-46J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-338" y="2988"/>
+            <point key="canvasLocation" x="-338.39999999999998" y="2987.8560719640182"/>
         </scene>
         <!--Workout Item List View Controller-->
         <scene sceneID="WqC-lc-2Ve">
@@ -564,6 +564,9 @@
                                 <items>
                                     <barButtonItem title="Item" id="lwv-kF-nEH"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="6im-bR-Wc1" id="e2j-ys-xrj"/>
+                                </connections>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0h-bX-p7q">
                                 <rect key="frame" x="190" y="87" width="157" height="30"/>
@@ -588,7 +591,7 @@
                     <connections>
                         <outlet property="Bt" destination="SFy-r2-flt" id="5tz-4Z-wUt"/>
                         <outlet property="dropdown" destination="Gmn-Zu-DnG" id="Eew-Qt-z1n"/>
-                        <outlet property="toolBar" destination="LXK-CG-KBq" id="nmP-UK-kkF"/>
+                        <outlet property="toolBar" destination="LXK-CG-KBq" id="DvE-Si-pLw"/>
                         <outlet property="workoutName" destination="c0h-bX-p7q" id="RTN-Tb-FqS"/>
                         <outlet property="workoutTextbox" destination="HrJ-hR-ROu" id="KKN-7O-JU6"/>
                     </connections>
