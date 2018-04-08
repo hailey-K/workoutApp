@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
-            timestampString = "544838659.037223"
+            timestampString = "544887497.181422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
-            timestampString = "544838659.037382"
+            timestampString = "544887497.1815619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
-            timestampString = "544838659.037441"
+            timestampString = "544887497.18168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "pickerView(_:titleForRow:forComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
-            timestampString = "544838659.03749"
+            timestampString = "544887497.181803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "pickerView(_:titleForRow:forComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
-            timestampString = "544838659.037534"
+            timestampString = "544887497.181909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "donePicker()"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
-            timestampString = "544838659.037578"
+            timestampString = "544887497.182011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "addWorkoutItem(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,12 +202,122 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
-            timestampString = "544838659.037621"
+            timestampString = "544887497.18212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
+            timestampString = "544887497.182228"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "createBt(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
+            timestampString = "544887497.18234"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "WorkoutItemListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "workoutapp.WorkoutItemListViewController.WorkoutIdString.getter : Swift.String"
+                  moduleName = "workoutapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hailey/workoutApp/workoutapp/workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
+                  timestampString = "544887497.347347"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "workoutapp.WorkoutItemListViewController.WorkoutIdString.setter : Swift.String"
+                  moduleName = "workoutapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hailey/workoutApp/workoutapp/workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
+                  timestampString = "544887497.350624"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "162">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "workoutapp.WorkoutItemListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; workoutapp.WorkoutItemListViewController"
+                  moduleName = "workoutapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hailey/workoutApp/workoutapp/workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
+                  timestampString = "544887497.353187"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "1109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "workoutapp.WorkoutItemListViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;workoutapp.WorkoutItemListViewController&gt;"
+                  moduleName = "workoutapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hailey/workoutApp/workoutapp/workoutapp/Controllers/Workout/WorkoutItemListViewController.swift"
+                  timestampString = "544887497.356155"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "1018">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "workoutapp/Controllers/Workout/WorkoutListViewController.swift"
+            timestampString = "544887497.18244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

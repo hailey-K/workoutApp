@@ -16,7 +16,7 @@ class DBUtil
         var db: OpaquePointer?
         //the database file
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            .appendingPathComponent("RIM.sqlite")
+            .appendingPathComponent("HCH_Enterprise.sqlite")
         //let fileURL = "/Users/BSH/Library/Developer/CoreSimulator/Devices";
         //opening the database
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {

@@ -11,21 +11,23 @@ import UIKit
 class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate,UIToolbarDelegate{
  
     
-   
-    //@IBOutlet weak var dropdown: UIPickerView!
+    @IBOutlet weak var Bt: UIButton!
+    @IBOutlet weak var workoutName: UITextField!
     @IBOutlet weak var workoutTextbox: UITextField!
     let workoutItemListName = ["+","-"]
-   
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var dropdown: UIPickerView!
-    //@IBOutlet weak var dropdown: UIPickerView!
-  //  @IBOutlet weak var toolbar: UIToolbar!
+    var WorkoutNameString = String()
+    var WorkoutIdString = String()
+    var BtText = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         dropdown.delegate = self
         dropdown.dataSource = self
         workoutTextbox.delegate = self
         toolBar.delegate=self
+        Bt.setTitle(BtText, for: UIControlState.normal)
+        workoutName.text = WorkoutNameString
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(donePicker))
         self.toolbarItems = [doneButton]
@@ -83,7 +85,18 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
      */
         print("asdfasd button clicked")
     }
-    
+    @IBAction func createBt(_ sender: Any) {
+        if BtText=="Create"
+        {
+            let workoutModel = WorkoutModel.init(WorkoutId: 0, WorkoutName: workoutName.text!)
+            WorkoutDB().insertWorkout(workoutModel: workoutModel)
+        }
+        else if BtText=="Save"
+        {
+            let workoutModel = WorkoutModel.init(WorkoutId: Int32(WorkoutIdString)!, WorkoutName: workoutName.text!)
+            WorkoutDB().updateWorkout(workoutModel: workoutModel)
+        }
+    }
     @objc func donePicker() {
        
         // create the alert

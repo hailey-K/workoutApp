@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0me-YK-w7i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0me-YK-w7i">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -496,7 +496,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="6im-bR-Wc1" kind="show" id="Ijv-pM-lDU"/>
+                                            <segue destination="6im-bR-Wc1" kind="show" identifier="editWorkoutSegue" id="Ijv-pM-lDU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -506,7 +506,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="6im-bR-Wc1" kind="show" id="lcJ-fl-vSd"/>
+                                    <segue destination="6im-bR-Wc1" kind="show" identifier="createWorkoutSegue" id="lcJ-fl-vSd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -515,7 +515,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="workout" id="3KK-bR-8vg"/>
                     <connections>
-                        <outlet property="workoutListView" destination="e0j-w1-Z8q" id="zF2-YE-5ld"/>
+                        <outlet property="workoutList" destination="e0j-w1-Z8q" id="zF2-YE-5ld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSr-fV-46J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -576,14 +576,20 @@
                                 <rect key="frame" x="301" y="364" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createBt:" destination="6im-bR-Wc1" eventType="touchUpInside" id="HJc-Nt-X8I"/>
+                                    <segue destination="ZWg-YP-Efc" kind="show" id="b2B-Jq-5tA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Sb2-gY-cXF"/>
                     </view>
                     <connections>
+                        <outlet property="Bt" destination="SFy-r2-flt" id="5tz-4Z-wUt"/>
                         <outlet property="dropdown" destination="Gmn-Zu-DnG" id="Eew-Qt-z1n"/>
                         <outlet property="toolBar" destination="LXK-CG-KBq" id="nmP-UK-kkF"/>
+                        <outlet property="workoutName" destination="c0h-bX-p7q" id="RTN-Tb-FqS"/>
                         <outlet property="workoutTextbox" destination="HrJ-hR-ROu" id="KKN-7O-JU6"/>
                     </connections>
                 </viewController>
@@ -889,8 +895,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="d6W-B7-W0j"/>
         <segue reference="Ijv-pM-lDU"/>
-        <segue reference="5kU-2E-bkO"/>
+        <segue reference="b2B-Jq-5tA"/>
         <segue reference="T8S-3t-dwb"/>
-        <segue reference="F2P-Pt-AMf"/>
+        <segue reference="1Xh-0O-iku"/>
     </inferredMetricsTieBreakers>
 </document>
