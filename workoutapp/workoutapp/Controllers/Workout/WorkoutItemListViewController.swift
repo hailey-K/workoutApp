@@ -106,8 +106,9 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     }
     func userWorkoutItemNameTextField(textField:UITextField)
     {
-        userWorkoutItemNameTextField = textField
-        userWorkoutItemNameTextField?.placeholder="workout item name"
+            userWorkoutItemNameTextField = textField
+            userWorkoutItemNameTextField?.placeholder="workout item name"
+
     }
     @IBAction func createBt(_ sender: Any) {
         if BtText=="Create"
@@ -151,6 +152,7 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
         }
     }
     @IBAction func longPress(_ recognizer: UILongPressGestureRecognizer) {
+       
         let point = recognizer.location(in: dropdown)
         
         if recognizer.state == UIGestureRecognizerState.began
@@ -172,23 +174,53 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
             return
         }
     }
+    func deleteWorkoutItem(alert: UIAlertAction)
+    {
+          let alert = UIAlertController(title: "Do you want to delete "+selectedWorkoutItemName+" ?", message: "If you click 'YES', it will permanently delete.", preferredStyle: .alert)
+         
+         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
+         (action) in
+         WorkoutItemDB().deleteWorkoutItem(WorkoutItemId: self.selectedWorkoutItemId)
+         self.workoutItemListName = WorkoutItemDB().getWorkoutItemNameList()
+         self.dropdown.reloadAllComponents()
+         //  self.delete = true
+         }))
+         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {
+         (action) in
+         //  self.delete = false
+         alert.dismiss(animated: true, completion: nil)
+         }))
+         self.present(alert, animated: true)
+        
+    }
+    func updateWorkoutItem(alert: UIAlertAction)
+    {
+        selectedWorkoutItemName = (userWorkoutItemNameTextField?.text)!
+        WorkoutItemDB().updateWorkoutItem(workoutItemModel: WorkoutItemModel(WorkoutItemId:selectedWorkoutItemId, WorkoutItemName: selectedWorkoutItemName))
+        self.workoutItemListName = WorkoutItemDB().getWorkoutItemNameList()
+        self.dropdown.reloadAllComponents()
+    }
     func createAlert()
     {
-        let alert = UIAlertController(title: "Do you want to delete "+selectedWorkoutItemName+" ?", message: "If you click 'YES', it will permanently delete.", preferredStyle: .alert)
+
         
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
-            (action) in
-            WorkoutItemDB().deleteWorkoutItem(WorkoutItemId: self.selectedWorkoutItemId)
-            self.workoutItemListName = WorkoutItemDB().getWorkoutItemNameList()
-            self.dropdown.reloadAllComponents()
-            //  self.delete = true
-        }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {
-            (action) in
-            //  self.delete = false
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true)
+        // create the alert
+        let alert = UIAlertController(title: "Workout Item Name", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addTextField(configurationHandler: userWorkoutItemNameTextField)
+        userWorkoutItemNameTextField?.text = selectedWorkoutItemName
+ 
+        // add cancel action (button)
+        alert.addAction(UIAlertAction(title: "CANCEL", style: UIAlertActionStyle.default, handler: nil))
+        
+        // add delete action (button)
+        alert.addAction(UIAlertAction(title: "DELETE", style: UIAlertActionStyle.default, handler: self.deleteWorkoutItem))
+        
+        // add okay action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: self.updateWorkoutItem))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+ 
     }
     /*
     // MARK: - Navigation
