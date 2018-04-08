@@ -16,14 +16,16 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     @IBOutlet weak var workoutTextbox: UITextField!
     let workoutItemListName = ["+","-"]
    
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var dropdown: UIPickerView!
-    @IBOutlet weak var toolbar: UIToolbar!
+    //@IBOutlet weak var dropdown: UIPickerView!
+  //  @IBOutlet weak var toolbar: UIToolbar!
     override func viewDidLoad() {
         super.viewDidLoad()
         dropdown.delegate = self
         dropdown.dataSource = self
         workoutTextbox.delegate = self
-        toolbar.delegate=self
+        toolBar.delegate=self
         
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(donePicker))
         self.toolbarItems = [doneButton]
@@ -110,13 +112,13 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.workoutTextbox.text = self.workoutItemListName[row]
         self.dropdown.isHidden = true
-        self.toolbar.isHidden=true
+        self.toolBar.isHidden=true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.workoutTextbox
         {
             self.dropdown.isHidden = false;
-            self.toolbar.isHidden=false
+            self.toolBar.isHidden=false
         }
     }
     /*
