@@ -45,8 +45,10 @@ class StopwatchControllerViewController: UIViewController, UITableViewDelegate, 
         else
         {
             //let timeText = stopwatchLabel.text!
-            
-            let timeText = String(format: "%02d:%02d.%02d", minutesLabel.text!, secondsLabel.text!, milisecondsLabel.text!)
+            let minites = minutesLabel.text!
+            let seconds = secondsLabel.text!
+            let miliSeconds = milisecondsLabel.text!
+            let timeText = String(format: "%@:%@.%@", minites, seconds, miliSeconds)
             lapsList.append(timeText)
             /*let lapModel = LapModel.init(seq: 0, timeText: timeText)
             StopwatchDB().insertALap(lapModel: lapModel)
@@ -66,7 +68,7 @@ class StopwatchControllerViewController: UIViewController, UITableViewDelegate, 
         minutesLabel.text = String(format: "%02d", minutes)
         secondsLabel.text = String(format: "%02d", seconds)
         milisecondsLabel.text = String(format: "%02d", hundredOfSeconds)
-        stopwatchLabel.text = String(format: "%02d:%02d.%02d", minutes, seconds, hundredOfSeconds)
+        //stopwatchLabel.text = String(format: "%02d:%02d.%02d", minutes, seconds, hundredOfSeconds)
     }
     
     @IBAction func clickStartStopBt(_ sender: Any) {

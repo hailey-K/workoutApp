@@ -22,7 +22,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     var TimerList = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       //testing
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
