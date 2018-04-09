@@ -19,6 +19,8 @@
 		5F2E32E220577C24004CB6DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2E32E020577C24004CB6DE /* Main.storyboard */; };
 		5F2E32E420577C24004CB6DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2E32E320577C24004CB6DE /* Assets.xcassets */; };
 		5F2E32E720577C24004CB6DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2E32E520577C24004CB6DE /* LaunchScreen.storyboard */; };
+		5F70F6C7207AAA5D00FCBE38 /* EStartStopLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70F6C6207AAA5D00FCBE38 /* EStartStopLabel.swift */; };
+		5F70F6C9207ABE2600FCBE38 /* IntervalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70F6C8207ABE2600FCBE38 /* IntervalViewCell.swift */; };
 		5F7D48D4206099DE0010E37F /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D48D3206099DE0010E37F /* StopwatchViewController.swift */; };
 		5FC3D39A20683C4400A9212F /* DBUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D39920683C4400A9212F /* DBUtil.swift */; };
 		5FC3D39F2068420500A9212F /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D39E2068420500A9212F /* ResultModel.swift */; };
@@ -105,6 +107,8 @@
 		5F2E32E320577C24004CB6DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F2E32E620577C24004CB6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F2E32E820577C24004CB6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F70F6C6207AAA5D00FCBE38 /* EStartStopLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EStartStopLabel.swift; sourceTree = "<group>"; };
+		5F70F6C8207ABE2600FCBE38 /* IntervalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalViewCell.swift; sourceTree = "<group>"; };
 		5F7D48D3206099DE0010E37F /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		5FC3D39920683C4400A9212F /* DBUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUtil.swift; sourceTree = "<group>"; };
 		5FC3D39E2068420500A9212F /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				D206E8F9206F68D20017081F /* TimerViewController.swift */,
 				D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */,
 				D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */,
+				5F70F6C8207ABE2600FCBE38 /* IntervalViewCell.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC3D39E2068420500A9212F /* ResultModel.swift */,
+				5F70F6C6207AAA5D00FCBE38 /* EStartStopLabel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -608,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F29A12A205B2D9900282E79 /* PlanAndMarkViewController.swift in Sources */,
+				5F70F6C7207AAA5D00FCBE38 /* EStartStopLabel.swift in Sources */,
 				D261505A2079B1BB00DED1C4 /* WorkoutListDB.swift in Sources */,
 				5FC3D3A9206847A300A9212F /* LapModel.swift in Sources */,
 				5F29A12E205B520300282E79 /* PopupNoteViewController.swift in Sources */,
@@ -623,6 +630,7 @@
 				5F29A126205ADC5500282E79 /* WorkoutItemListViewController.swift in Sources */,
 				D206E8F3206F5D740017081F /* TimerDB.swift in Sources */,
 				5FC3D39F2068420500A9212F /* ResultModel.swift in Sources */,
+				5F70F6C9207ABE2600FCBE38 /* IntervalViewCell.swift in Sources */,
 				D2ADC7A62071E54E007CA3AC /* RunTimerViewController.swift in Sources */,
 				D261505E2079B20800DED1C4 /* WorkoutListModel.swift in Sources */,
 				D206E8FA206F68D20017081F /* TimerViewController.swift in Sources */,

@@ -21,12 +21,7 @@ class StopwatchControllerViewController: UIViewController, UITableViewDelegate, 
     var timer = Timer()
     var isTimerRunning = false
     var elapsedTime:Double = 0
-    
-    enum EStartStopLabel:String
-    {
-        case Start, Stop
-    }
-    
+        
     enum ELapResetLabel:String
     {
         case Lap, Reset
@@ -38,6 +33,9 @@ class StopwatchControllerViewController: UIViewController, UITableViewDelegate, 
             startStopBt.setTitle(EStartStopLabel.Start.rawValue, for: .normal)
             labsResetBt.setTitle(ELapResetLabel.Lap.rawValue, for: .normal)
             //stopwatchLabel.text = String("00:00.00")
+            minutesLabel.text = String("00")
+            secondsLabel.text = String("00")
+            milisecondsLabel.text = String("00")
             labsResetBt.isEnabled = false
             lapsList = []
             elapsedTime = 0
