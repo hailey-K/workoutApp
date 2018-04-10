@@ -8,27 +8,31 @@
 
 import UIKit
 
-class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate,UIToolbarDelegate{
- 
+class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate,UIToolbarDelegate,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var Bt: UIButton!
     @IBOutlet weak var workoutName: UITextField!
     @IBOutlet weak var workoutTextbox: UITextField!
     var workoutItemListName = WorkoutItemDB().getWorkoutItemNameList()
+    var workoutItemsList = ["-"]
    // @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var dropdown: UIPickerView!
+    @IBOutlet weak var workoutItemsTableView: UITableView!
     var WorkoutNameString = String()
     var WorkoutIdString = String()
     var BtText = String()
     var selectedWorkoutItemId = Int32()
     var selectedWorkoutItemName = String()
     var userWorkoutItemNameTextField :UITextField?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dropdown.delegate = self
         dropdown.dataSource = self
         workoutTextbox.delegate = self
+        workoutItemsTableView.delegate=self
+        workoutItemsTableView.dataSource=self
   //      toolBar.delegate=self
         toolBar.delegate=self
         Bt.setTitle(BtText, for: UIControlState.normal)
@@ -65,7 +69,22 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
         workoutTextbox.inputAccessoryView = toolBar
         }
   */
- 
+    
+    
+    @IBAction func AddWorkoutItmesBt(_ sender: Any) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = workoutItemsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WorkoutItemTableViewCell
+       cell.workoutItem.text=workoutItemsList[indexPath.row]
+        return cell
+    }
+    
     @IBAction func addWorkoutItem(_ sender: Any) {
         // create the alert
         let alert = UIAlertController(title: "Workout Item Name", message: nil, preferredStyle: UIAlertControllerStyle.alert)
@@ -140,14 +159,14 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.workoutTextbox.text = self.workoutItemListName[row].WorkoutItemName
+       self.workoutTextbox.text = self.workoutItemListName[row].WorkoutItemName
         self.dropdown.isHidden = true
         self.toolBar.isHidden=true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if (textField == self.workoutTextbox)
         {
-            self.dropdown.isHidden = false;
+            self.dropdown.isHidden = false
             self.toolBar.isHidden=false
         }
     }
