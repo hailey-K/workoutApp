@@ -19,13 +19,14 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var dropdown: UIPickerView!
     @IBOutlet weak var workoutItemsTableView: UITableView!
+    var workoutTempTextbox: UITextField!
     var WorkoutNameString = String()
     var WorkoutIdString = String()
     var BtText = String()
     var selectedWorkoutItemId = Int32()
     var selectedWorkoutItemName = String()
     var userWorkoutItemNameTextField :UITextField?
-    
+    var indexPathForCell = IndexPath();
     override func viewDidLoad() {
         super.viewDidLoad()
         dropdown.delegate = self
@@ -82,6 +83,11 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = workoutItemsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WorkoutItemTableViewCell
        cell.workoutItem.text=workoutItemsList[indexPath.row]
+     //   var cellTextField = self.view.viewWithTag(101) as? UITextField
+        cell.workoutItem.delegate = self
+        workoutTempTextbox = cell.workoutItem
+        workoutTempTextbox.delegate = self
+      //  indexPathForCell = indexPath
         return cell
     }
     
@@ -163,12 +169,24 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
         self.dropdown.isHidden = true
         self.toolBar.isHidden=true
     }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        
         if (textField == self.workoutTextbox)
         {
             self.dropdown.isHidden = false
             self.toolBar.isHidden=false
         }
+        let cell = workoutItemsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPathForCell) as! WorkoutItemTableViewCell
+      //  cell.workoutItem.text=workoutItemsList[indexPathForCell.row]
+        if(textField == self.workoutTempTextbox)
+        {
+            self.dropdown.isHidden = false
+            self.toolBar.isHidden=false
+        }
+        
+        
     }
     @IBAction func longPress(_ recognizer: UILongPressGestureRecognizer) {
        
