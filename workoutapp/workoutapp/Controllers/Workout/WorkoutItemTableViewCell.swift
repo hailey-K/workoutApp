@@ -2,7 +2,7 @@
 //  WorkoutItemTableViewCell.swift
 //  workoutapp
 //
-//  Created by Hailey on 2018-04-08.
+//  Created by hyerim on 2018-04-08.
 //  Copyright © 2018 hch_enterprise. All rights reserved.
 //
 

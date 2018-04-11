@@ -2,7 +2,7 @@
 //  TimerViewCell.swift
 //  workoutapp
 //
-//  Created by Hailey on 2018-04-01.
+//  Created by hyerim on 2018-04-01.
 //  Copyright © 2018 hch_enterprise. All rights reserved.
 //
 

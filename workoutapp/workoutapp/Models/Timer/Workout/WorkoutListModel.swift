@@ -2,7 +2,7 @@
 //  WorkoutListModel.swift
 //  workoutapp
 //
-//  Created by Hyerim on 2018-04-07.
+//  Created by hyerim on 2018-04-07.
 //  Copyright © 2018 hch_enterprise. All rights reserved.
 //
 

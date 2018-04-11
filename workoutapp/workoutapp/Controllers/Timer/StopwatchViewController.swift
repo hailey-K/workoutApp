@@ -2,7 +2,7 @@
 //  StopwatchControllerViewController.swift
 //  workoutapp
 //
-//  Created by BSH on 2018. 3. 19..
+//  Created by hyerim on 2018. 3. 19..
 //  Copyright © 2018년 hch_enterprise. All rights reserved.
 //
 

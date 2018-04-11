@@ -2,7 +2,7 @@
 //  TimerModel.swift
 //  workoutapp
 //
-//  Created by Hailey on 2018-03-31.
+//  Created by hyerim on 2018-03-31.
 //  Copyright © 2018 hch_enterprise. All rights reserved.
 //
 

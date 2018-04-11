@@ -2,7 +2,7 @@
 //  WorkoutItemListViewController.swift
 //  workoutapp
 //
-//  Created by BSH on 2018. 3. 15..
+//  Created by hyerim on 2018. 3. 15..
 //  Copyright © 2018년 hch_enterprise. All rights reserved.
 //
 
@@ -12,9 +12,8 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     
     @IBOutlet weak var Bt: UIButton!
     @IBOutlet weak var workoutName: UITextField!
-    @IBOutlet weak var workoutTextbox: UITextField!
     var workoutItemListName = WorkoutItemDB().getWorkoutItemNameList()
-    var workoutItemsList = ["-"]
+    var workoutItemsList:[WorkoutListModel] = []
    // @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var dropdown: UIPickerView!
@@ -22,6 +21,7 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     var workoutTempTextbox: UITextField!
     var WorkoutNameString = String()
     var WorkoutIdString = String()
+    var numberOfWorkoutList = 1
     var BtText = String()
     var selectedWorkoutItemId = Int32()
     var selectedWorkoutItemName = String()
@@ -31,13 +31,24 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
         super.viewDidLoad()
         dropdown.delegate = self
         dropdown.dataSource = self
-        workoutTextbox.delegate = self
         workoutItemsTableView.delegate=self
         workoutItemsTableView.dataSource=self
   //      toolBar.delegate=self
         toolBar.delegate=self
         Bt.setTitle(BtText, for: UIControlState.normal)
         workoutName.text = WorkoutNameString
+        
+        //create new workout id
+        if(WorkoutIdString != "")
+        {
+            workoutItemsList = WorkoutListDB().getWorkoutListNameList(WorkoutId: Int32(WorkoutIdString)!)
+            if(workoutItemsList.count != 0)
+            {
+                numberOfWorkoutList = workoutItemsList.count
+            }
+        }
+   
+      
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(donePicker))
         let addWorkoutItemButton = UIBarButtonItem(title: "Add Workout Item", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(addWorkoutItem))
         toolBar.setItems([cancelButton,addWorkoutItemButton], animated: false)
@@ -73,16 +84,29 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     
     
     @IBAction func AddWorkoutItmesBt(_ sender: Any) {
-        
+        numberOfWorkoutList += 1
+        self.workoutItemsTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        /*
+        //haven't created or already created but it doesn't have any workout items yet
+        if (WorkoutIdString==""||(WorkoutIdString != "" && workoutItemsList.count == 0))
+        {
+           return 1
+        }
+        
+        else
+        {
+            return workoutItemsList.count
+        }
+ */
+        return numberOfWorkoutList
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = workoutItemsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WorkoutItemTableViewCell
-       cell.workoutItem.text=workoutItemsList[indexPath.row]
+       // cell.workoutItem.text = workoutItemListName[indexPath.row].WorkoutItemName
      //   var cellTextField = self.view.viewWithTag(101) as? UITextField
         cell.workoutItem.delegate = self
         workoutTempTextbox = cell.workoutItem
@@ -150,7 +174,7 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     @objc func donePicker() {
         self.dropdown.isHidden = true
         self.toolBar.isHidden=true
-        workoutTextbox.resignFirstResponder()
+        workoutTempTextbox.resignFirstResponder()
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -165,19 +189,14 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       self.workoutTextbox.text = self.workoutItemListName[row].WorkoutItemName
+      // self.workoutTextbox.text = self.workoutItemListName[row].WorkoutItemName
+        workoutTempTextbox.text = self.workoutItemListName[row].WorkoutItemName
         self.dropdown.isHidden = true
         self.toolBar.isHidden=true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        
-        if (textField == self.workoutTextbox)
-        {
-            self.dropdown.isHidden = false
-            self.toolBar.isHidden=false
-        }
+     
         let cell = workoutItemsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPathForCell) as! WorkoutItemTableViewCell
       //  cell.workoutItem.text=workoutItemsList[indexPathForCell.row]
         if(textField == self.workoutTempTextbox)
@@ -185,7 +204,6 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
             self.dropdown.isHidden = false
             self.toolBar.isHidden=false
         }
-        
         
     }
     @IBAction func longPress(_ recognizer: UILongPressGestureRecognizer) {
