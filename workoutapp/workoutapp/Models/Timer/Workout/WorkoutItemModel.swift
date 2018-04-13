@@ -16,5 +16,6 @@ class WorkoutItemModel
         self.WorkoutItemId = WorkoutItemId
         self.WorkoutItemName = WorkoutItemName
     }
+    
 }
 

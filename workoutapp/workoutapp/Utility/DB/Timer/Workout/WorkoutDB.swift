@@ -24,7 +24,28 @@ import Foundation
             print("Create Success")
         }
     }
-    
+    func getWorkoutId(WorkoutName:String)->Int32
+    {
+        let db = DBUtil().getConnectione()
+        var workoutId = Int32()
+        //statement pointer
+        var stmt:OpaquePointer?
+        let queryString = "SELECT workoutId FROM Workout;"
+        
+        //preparing the query
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error preparing insert: \(errmsg)")
+            return workoutId
+        }
+        
+        //traversing through all the records
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            workoutId = sqlite3_column_int(stmt, 0)
+        }
+        
+        return workoutId
+    }
     func insertWorkout(workoutModel:WorkoutModel)
     {
         self.createWorkoutTable()

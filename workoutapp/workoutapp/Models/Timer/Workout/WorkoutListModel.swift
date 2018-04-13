@@ -11,12 +11,12 @@ class WorkoutListModel
 {
 var WorkoutListId: Int32
 var WorkoutItemId: Int32
-var workoutId: Int32
+var WorkoutId: Int32
 
-    init(WorkoutListId:Int32, WorkoutItemId: Int32,workoutId:Int32)
+    init(WorkoutListId:Int32, WorkoutItemId: Int32,WorkoutId:Int32)
 {
     self.WorkoutListId = WorkoutListId
     self.WorkoutItemId = WorkoutItemId
-    self.workoutId = workoutId
+    self.WorkoutId = WorkoutId
 }
 }

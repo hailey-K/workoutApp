@@ -11,6 +11,7 @@ import UIKit
 class WorkoutItemTableViewCell: UITableViewCell {
 
     @IBOutlet weak var workoutItem: UITextField!
+    var workoutItemIndexPath = IndexPath()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

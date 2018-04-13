@@ -14,7 +14,7 @@ private func createWorkoutListTable()
 {
     let db = DBUtil().getConnectione()
     
-    if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS WorkoutList (WorkoutListId INTEGER PRIMARY KEY AUTOINCREMENT, WorkoutItemId INTEGER, WorkoutId)", nil, nil, nil) != SQLITE_OK {
+    if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS WorkoutList (WorkoutListId INTEGER PRIMARY KEY AUTOINCREMENT, WorkoutItemId INTEGER, WorkoutId INTEGER)", nil, nil, nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
         print("error creating table: \(errmsg)")
     }
@@ -32,8 +32,8 @@ func insertWorkoutList(workoutListModel:WorkoutListModel)
     //creating a statement
     var stmt: OpaquePointer?
     //the insert query
-    let queryString = "INSERT INTO WorkoutList (WorkoutItemId,WorkoutId) VALUES ('\(workoutListModel.WorkoutItemId,workoutListModel.workoutId)')"
-    
+    let queryString = "INSERT INTO WorkoutList (WorkoutItemId,WorkoutId) VALUES ('\(workoutListModel.WorkoutItemId)','\(workoutListModel.WorkoutId)')"
+
     if sqlite3_exec(db, queryString, nil, nil, nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
         print("error creating table: \(errmsg)")
@@ -47,14 +47,14 @@ func updateWorkoutList(workoutListModel:WorkoutListModel)
     //creating a statement
     var stmt: OpaquePointer?
     //the update query
-    let queryString = "UPDATE WorkoutList SET WorkoutItemId = '\(workoutListModel.WorkoutItemId)', WorkoutId = '\(workoutListModel.workoutId)' WHERE WorkoutListId = '\(workoutListModel.WorkoutListId)'"
+    let queryString = "UPDATE WorkoutList SET WorkoutItemId = '\(workoutListModel.WorkoutItemId)', WorkoutId = '\(workoutListModel.WorkoutId)' WHERE WorkoutListId = '\(workoutListModel.WorkoutListId)'"
     
     if sqlite3_exec(db, queryString, nil, nil, nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
         print("error updating table: \(errmsg)")
     }
 }
-func deleteWorkoutList(WorkoutListId:Int32)
+func deleteWorkoutList(WorkoutId:Int32)
 {
     self.createWorkoutListTable()
     let db = DBUtil().getConnectione()
@@ -62,7 +62,7 @@ func deleteWorkoutList(WorkoutListId:Int32)
     //creating a statement
     var stmt: OpaquePointer?
     //the delete query
-    let queryString = "DELETE FROM WorkoutList WHERE WorkoutListId = '\(WorkoutListId)'"
+    let queryString = "DELETE FROM WorkoutList WHERE WorkoutId = '\(WorkoutId)'"
     
     if sqlite3_exec(db, queryString, nil, nil, nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
@@ -92,7 +92,7 @@ func deleteWorkoutList(WorkoutListId:Int32)
         let workoutId = sqlite3_column_int(stmt, 2)
         
         //adding values to list
-        WorkoutItemList.append(WorkoutListModel.init(WorkoutListId:workoutItemId, WorkoutItemId: workoutItemId,workoutId:workoutId))
+        WorkoutItemList.append(WorkoutListModel.init(WorkoutListId:workoutItemId, WorkoutItemId: workoutItemId,WorkoutId:workoutId))
     }
     
     return WorkoutItemList
