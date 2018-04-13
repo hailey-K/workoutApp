@@ -10,57 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="workoutapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFA-ZL-0yC">
-                                <rect key="frame" x="148" y="307" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="plan/mark"/>
-                                <connections>
-                                    <segue destination="Yo2-ek-K4x" kind="show" id="d6W-B7-W0j"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="div-e3-4V3">
-                                <rect key="frame" x="138" y="345" width="89" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="workout plan"/>
-                                <connections>
-                                    <segue destination="ZWg-YP-Efc" kind="show" id="5kU-2E-bkO"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="workout app first page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVr-vz-Fj1">
-                                <rect key="frame" x="96" y="99" width="172" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olj-Vp-8ll">
-                                <rect key="frame" x="164" y="269" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="timer"/>
-                                <connections>
-                                    <action selector="TimerBt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BUs-UT-sSF"/>
-                                    <segue destination="cbh-GX-b9K" kind="show" id="F2P-Pt-AMf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="rde-GF-XgT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="532" y="1332.6836581709147"/>
-        </scene>
-        <!--timer-->
+        <!--Timer List Controller View Controller-->
         <scene sceneID="nfe-87-qsN">
             <objects>
                 <viewController id="cbh-GX-b9K" customClass="TimerListControllerViewController" customModule="workoutapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,7 +83,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OoU-7w-NAI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="timer" id="fB6-cK-Hd4"/>
                     <navigationItem key="navigationItem" id="0uf-wG-bOt"/>
                     <connections>
                         <outlet property="timerListView" destination="zqV-wE-6xm" id="m4J-Jv-r9B"/>
@@ -142,7 +91,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yy6-Wn-IsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="J2g-CH-YoH"/>
             </objects>
-            <point key="canvasLocation" x="-394.39999999999998" y="339.58020989505252"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="339.58020989505252"/>
         </scene>
         <!--Stopwatch Controller View Controller-->
         <scene sceneID="rhl-b7-nP7">
@@ -248,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajQ-vU-GSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693.5999999999999" y="654.42278860569718"/>
+            <point key="canvasLocation" x="2032.8" y="654.42278860569718"/>
         </scene>
         <!--Run Timer View Controller-->
         <scene sceneID="c2T-zY-oE0">
@@ -338,7 +287,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Exit"/>
                                 <connections>
-                                    <segue destination="cbh-GX-b9K" kind="show" id="O1y-ht-nkD"/>
+                                    <segue destination="rLq-Pg-x6s" kind="show" id="O1y-ht-nkD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -433,7 +382,7 @@
                                 <state key="normal" title="create"/>
                                 <connections>
                                     <action selector="createBt:" destination="u9T-Ck-bh1" eventType="touchUpInside" id="Gvz-6L-CfE"/>
-                                    <segue destination="cbh-GX-b9K" kind="show" id="1Xh-0O-iku"/>
+                                    <segue destination="rLq-Pg-x6s" kind="show" id="1Xh-0O-iku"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -450,9 +399,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dzm-KH-jRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1653.5999999999999" y="-92.203898050974516"/>
+            <point key="canvasLocation" x="1992.8" y="-92.203898050974516"/>
         </scene>
-        <!--workout-->
+        <!--Workout List View Controller-->
         <scene sceneID="WHy-6h-eG1">
             <objects>
                 <viewController id="ZWg-YP-Efc" customClass="WorkoutListViewController" customModule="workoutapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -513,14 +462,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="j39-y4-lUl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="workout" id="3KK-bR-8vg"/>
+                    <navigationItem key="navigationItem" id="H2U-R6-eKG"/>
                     <connections>
                         <outlet property="workoutList" destination="e0j-w1-Z8q" id="zF2-YE-5ld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSr-fV-46J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-338.39999999999998" y="2987.8560719640182"/>
+            <point key="canvasLocation" x="0.80000000000000004" y="2987.8560719640182"/>
         </scene>
         <!--Workout Item List View Controller-->
         <scene sceneID="WqC-lc-2Ve">
@@ -564,7 +513,7 @@
                                 <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="createBt:" destination="6im-bR-Wc1" eventType="touchUpInside" id="HJc-Nt-X8I"/>
-                                    <segue destination="ZWg-YP-Efc" kind="show" id="b2B-Jq-5tA"/>
+                                    <segue destination="ZWz-S7-uID" kind="show" id="b2B-Jq-5tA"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ulI-q4-KES">
@@ -623,7 +572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PP8-sj-Gtz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.79999999999995" y="3009.4452773613198"/>
+            <point key="canvasLocation" x="1292" y="3009.4452773613198"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="u5a-CN-T45">
@@ -647,9 +596,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDd-dC-E4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="3009"/>
+            <point key="canvasLocation" x="2180" y="3008.5457271364321"/>
         </scene>
-        <!--plan&mark-->
+        <!--Plan And Mark View Controller-->
         <scene sceneID="No7-S3-ZML">
             <objects>
                 <viewController id="Yo2-ek-K4x" customClass="PlanAndMarkViewController" customModule="workoutapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -678,12 +627,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wqg-r7-koX"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="plan&amp;mark" id="bsm-Fm-OEX"/>
+                    <navigationItem key="navigationItem" id="CKi-lx-zoW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0O-nr-A00" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Cie-mz-HLt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-394" y="2219"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="2218.7406296851577"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="M12-Vx-fWJ">
@@ -749,7 +698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPZ-ct-wfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="2194"/>
+            <point key="canvasLocation" x="1096.8" y="2193.5532233883059"/>
         </scene>
         <!--Popup Note View Controller-->
         <scene sceneID="peY-ch-uW4">
@@ -804,7 +753,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPT-gO-g2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2633" y="1887"/>
+            <point key="canvasLocation" x="2972" y="1886.8065967016494"/>
         </scene>
         <!--Popup Workout View Controller-->
         <scene sceneID="1AA-Qr-pJH">
@@ -877,7 +826,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cZ-vc-HMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2634" y="2789"/>
+            <point key="canvasLocation" x="3311.1999999999998" y="2788.1559220389809"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XoB-GX-isj">
@@ -890,41 +839,79 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3Zk-om-TrR" kind="relationship" relationship="viewControllers" id="DNX-fb-wUe"/>
-                        <segue destination="cbh-GX-b9K" kind="relationship" relationship="viewControllers" id="BRz-nA-cT3"/>
-                        <segue destination="ZWg-YP-Efc" kind="relationship" relationship="viewControllers" id="TCN-aK-Dlf"/>
-                        <segue destination="Yo2-ek-K4x" kind="relationship" relationship="viewControllers" id="9DZ-cv-ndT"/>
+                        <segue destination="rLq-Pg-x6s" kind="relationship" relationship="viewControllers" id="BRz-nA-cT3"/>
+                        <segue destination="ZWz-S7-uID" kind="relationship" relationship="viewControllers" id="TCN-aK-Dlf"/>
+                        <segue destination="tDn-AJ-4Bg" kind="relationship" relationship="viewControllers" id="9DZ-cv-ndT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnI-cy-l7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1962" y="1314"/>
         </scene>
-        <!--home-->
-        <scene sceneID="kSY-6P-caA">
+        <!--timer-->
+        <scene sceneID="cVc-2Z-6JL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Zk-om-TrR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" id="E19-KL-5y6"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rLq-Pg-x6s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="timer" id="fB6-cK-Hd4"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZAZ-Qn-cSH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8xw-0L-I9f">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1h7-qV-EX4"/>
+                        <segue destination="cbh-GX-b9K" kind="relationship" relationship="rootViewController" id="46x-k0-D5L"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MSt-xn-5Gm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wk8-i7-2FL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-393" y="1333"/>
+            <point key="canvasLocation" x="-1073" y="340"/>
+        </scene>
+        <!--plan&mark-->
+        <scene sceneID="eKP-kU-sSC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tDn-AJ-4Bg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="plan&amp;mark" id="bsm-Fm-OEX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Wd-dS-GS4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yo2-ek-K4x" kind="relationship" relationship="rootViewController" id="cbi-oa-gzj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ISe-WX-cLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1074" y="2219"/>
+        </scene>
+        <!--workout-->
+        <scene sceneID="Hir-Nc-56i">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZWz-S7-uID" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="workout" id="3KK-bR-8vg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mdP-B0-OP8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZWg-YP-Efc" kind="relationship" relationship="rootViewController" id="BPH-pe-Vvl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZjB-bD-ilG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1074" y="2988"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d6W-B7-W0j"/>
-        <segue reference="Ijv-pM-lDU"/>
+        <segue reference="46x-k0-D5L"/>
+        <segue reference="BPH-pe-Vvl"/>
         <segue reference="b2B-Jq-5tA"/>
+        <segue reference="1Xh-0O-iku"/>
+        <segue reference="Ijv-pM-lDU"/>
         <segue reference="T8S-3t-dwb"/>
-        <segue reference="O1y-ht-nkD"/>
     </inferredMetricsTieBreakers>
 </document>
