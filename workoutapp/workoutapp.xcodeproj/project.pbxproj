@@ -36,6 +36,8 @@
 		D26150602079B21800DED1C4 /* WorkoutItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261505F2079B21800DED1C4 /* WorkoutItemModel.swift */; };
 		D2ADC7A22071D26F007CA3AC /* TimerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */; };
 		D2ADC7A62071E54E007CA3AC /* RunTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */; };
+		D2D0627B2081579E002A66A1 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0627A2081579E002A66A1 /* CalendarVars.swift */; };
+		D2D0627D208157B5002A66A1 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0627C208157B5002A66A1 /* DateCollectionViewCell.swift */; };
 		D2D648EC207AF4C700980820 /* WorkoutItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648EB207AF4C700980820 /* WorkoutItemTableViewCell.swift */; };
 		D2D648F5207BE33800980820 /* workoutappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648F4207BE33800980820 /* workoutappTests.swift */; };
 		D2D648FE207BE47F00980820 /* TimerModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648FD207BE47F00980820 /* TimerModelTest.swift */; };
@@ -181,6 +183,8 @@
 		D261505F2079B21800DED1C4 /* WorkoutItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemModel.swift; sourceTree = "<group>"; };
 		D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewCell.swift; sourceTree = "<group>"; };
 		D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimerViewController.swift; sourceTree = "<group>"; };
+		D2D0627A2081579E002A66A1 /* CalendarVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarVars.swift; path = ../../../../../Downloads/workoutapp/workoutapp/Controllers/PlanAndMark/CalendarVars.swift; sourceTree = "<group>"; };
+		D2D0627C208157B5002A66A1 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = ../../../../Downloads/workoutapp/workoutapp/Controllers/PlanAndMark/DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2D648EB207AF4C700980820 /* WorkoutItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemTableViewCell.swift; sourceTree = "<group>"; };
 		D2D648F2207BE33800980820 /* workoutappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workoutappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D648F4207BE33800980820 /* workoutappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutappTests.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 		5F29A124205ADC2300282E79 /* PlanAndMark */ = {
 			isa = PBXGroup;
 			children = (
+				D2D0627A2081579E002A66A1 /* CalendarVars.swift */,
 				5F29A129205B2D9900282E79 /* PlanAndMarkViewController.swift */,
 				5F29A12B205B4C2900282E79 /* PopupViewController.swift */,
 				5F29A12D205B520300282E79 /* PopupNoteViewController.swift */,
@@ -282,6 +287,7 @@
 		5F2E32EE20578814004CB6DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2D0627C208157B5002A66A1 /* DateCollectionViewCell.swift */,
 				5F29A124205ADC2300282E79 /* PlanAndMark */,
 				5F29A122205ADBF600282E79 /* Timer */,
 				5F29A121205ADBDD00282E79 /* Workout */,
@@ -702,6 +708,7 @@
 				5F29A12E205B520300282E79 /* PopupNoteViewController.swift in Sources */,
 				5F7D48D4206099DE0010E37F /* StopwatchViewController.swift in Sources */,
 				5FC3D39A20683C4400A9212F /* DBUtil.swift in Sources */,
+				D2D0627B2081579E002A66A1 /* CalendarVars.swift in Sources */,
 				D2D648EC207AF4C700980820 /* WorkoutItemTableViewCell.swift in Sources */,
 				5F29A130205B553D00282E79 /* PopupWorkoutViewController.swift in Sources */,
 				D2ADC7A22071D26F007CA3AC /* TimerViewCell.swift in Sources */,
@@ -715,6 +722,7 @@
 				5FC3D39F2068420500A9212F /* ResultModel.swift in Sources */,
 				D2ADC7A62071E54E007CA3AC /* RunTimerViewController.swift in Sources */,
 				D261505E2079B20800DED1C4 /* WorkoutListModel.swift in Sources */,
+				D2D0627D208157B5002A66A1 /* DateCollectionViewCell.swift in Sources */,
 				D206E8FA206F68D20017081F /* TimerViewController.swift in Sources */,
 				D26150552079A4E400DED1C4 /* WorkoutDB.swift in Sources */,
 				5F2E32DD20577C24004CB6DE /* AppDelegate.swift in Sources */,
