@@ -25,6 +25,8 @@
 		5FC3D3A52068474100A9212F /* StopwatchDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D3A42068474100A9212F /* StopwatchDB.swift */; };
 		5FC3D3A9206847A300A9212F /* LapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D3A8206847A300A9212F /* LapModel.swift */; };
 		5FC3D3C32068759F00A9212F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC3D3C22068759F00A9212F /* libsqlite3.tbd */; };
+		5FF9DF3A20818DCE003BE128 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9DF3920818DCE003BE128 /* CalendarVars.swift */; };
+		5FF9DF3C20818E2A003BE128 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9DF3B20818E2A003BE128 /* DateCollectionViewCell.swift */; };
 		D206E8F3206F5D740017081F /* TimerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D206E8F2206F5D740017081F /* TimerDB.swift */; };
 		D206E8F5206F62430017081F /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D206E8F4206F62430017081F /* TimerModel.swift */; };
 		D206E8FA206F68D20017081F /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D206E8F9206F68D20017081F /* TimerViewController.swift */; };
@@ -36,8 +38,6 @@
 		D26150602079B21800DED1C4 /* WorkoutItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261505F2079B21800DED1C4 /* WorkoutItemModel.swift */; };
 		D2ADC7A22071D26F007CA3AC /* TimerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */; };
 		D2ADC7A62071E54E007CA3AC /* RunTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */; };
-		D2D0627B2081579E002A66A1 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0627A2081579E002A66A1 /* CalendarVars.swift */; };
-		D2D0627D208157B5002A66A1 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D0627C208157B5002A66A1 /* DateCollectionViewCell.swift */; };
 		D2D648EC207AF4C700980820 /* WorkoutItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648EB207AF4C700980820 /* WorkoutItemTableViewCell.swift */; };
 		D2D648F5207BE33800980820 /* workoutappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648F4207BE33800980820 /* workoutappTests.swift */; };
 		D2D648FE207BE47F00980820 /* TimerModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648FD207BE47F00980820 /* TimerModelTest.swift */; };
@@ -172,6 +172,8 @@
 		5FC3D3F82068761600A9212F /* FMDatabasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		5FC3D3F92068761600A9212F /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		5FC3D3FA2068761600A9212F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FF9DF3920818DCE003BE128 /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
+		5FF9DF3B20818E2A003BE128 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		D206E8F2206F5D740017081F /* TimerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDB.swift; sourceTree = "<group>"; };
 		D206E8F4206F62430017081F /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		D206E8F9206F68D20017081F /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -183,8 +185,6 @@
 		D261505F2079B21800DED1C4 /* WorkoutItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemModel.swift; sourceTree = "<group>"; };
 		D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewCell.swift; sourceTree = "<group>"; };
 		D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimerViewController.swift; sourceTree = "<group>"; };
-		D2D0627A2081579E002A66A1 /* CalendarVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarVars.swift; path = ../../../../../Downloads/workoutapp/workoutapp/Controllers/PlanAndMark/CalendarVars.swift; sourceTree = "<group>"; };
-		D2D0627C208157B5002A66A1 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = ../../../../Downloads/workoutapp/workoutapp/Controllers/PlanAndMark/DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2D648EB207AF4C700980820 /* WorkoutItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemTableViewCell.swift; sourceTree = "<group>"; };
 		D2D648F2207BE33800980820 /* workoutappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workoutappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D648F4207BE33800980820 /* workoutappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutappTests.swift; sourceTree = "<group>"; };
@@ -241,11 +241,11 @@
 		5F29A124205ADC2300282E79 /* PlanAndMark */ = {
 			isa = PBXGroup;
 			children = (
-				D2D0627A2081579E002A66A1 /* CalendarVars.swift */,
 				5F29A129205B2D9900282E79 /* PlanAndMarkViewController.swift */,
 				5F29A12B205B4C2900282E79 /* PopupViewController.swift */,
 				5F29A12D205B520300282E79 /* PopupNoteViewController.swift */,
 				5F29A12F205B553D00282E79 /* PopupWorkoutViewController.swift */,
+				5FF9DF3920818DCE003BE128 /* CalendarVars.swift */,
 			);
 			path = PlanAndMark;
 			sourceTree = "<group>";
@@ -287,11 +287,11 @@
 		5F2E32EE20578814004CB6DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D2D0627C208157B5002A66A1 /* DateCollectionViewCell.swift */,
 				5F29A124205ADC2300282E79 /* PlanAndMark */,
 				5F29A122205ADBF600282E79 /* Timer */,
 				5F29A121205ADBDD00282E79 /* Workout */,
 				5F2E32DE20577C24004CB6DE /* ViewController.swift */,
+				5FF9DF3B20818E2A003BE128 /* DateCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -585,7 +585,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = hch_enterprise;
 				TargetAttributes = {
 					5F2E32D820577C24004CB6DE = {
@@ -708,8 +708,8 @@
 				5F29A12E205B520300282E79 /* PopupNoteViewController.swift in Sources */,
 				5F7D48D4206099DE0010E37F /* StopwatchViewController.swift in Sources */,
 				5FC3D39A20683C4400A9212F /* DBUtil.swift in Sources */,
-				D2D0627B2081579E002A66A1 /* CalendarVars.swift in Sources */,
 				D2D648EC207AF4C700980820 /* WorkoutItemTableViewCell.swift in Sources */,
+				5FF9DF3A20818DCE003BE128 /* CalendarVars.swift in Sources */,
 				5F29A130205B553D00282E79 /* PopupWorkoutViewController.swift in Sources */,
 				D2ADC7A22071D26F007CA3AC /* TimerViewCell.swift in Sources */,
 				5F29A120205AD84C00282E79 /* WorkoutListViewController.swift in Sources */,
@@ -722,7 +722,7 @@
 				5FC3D39F2068420500A9212F /* ResultModel.swift in Sources */,
 				D2ADC7A62071E54E007CA3AC /* RunTimerViewController.swift in Sources */,
 				D261505E2079B20800DED1C4 /* WorkoutListModel.swift in Sources */,
-				D2D0627D208157B5002A66A1 /* DateCollectionViewCell.swift in Sources */,
+				5FF9DF3C20818E2A003BE128 /* DateCollectionViewCell.swift in Sources */,
 				D206E8FA206F68D20017081F /* TimerViewController.swift in Sources */,
 				D26150552079A4E400DED1C4 /* WorkoutDB.swift in Sources */,
 				5F2E32DD20577C24004CB6DE /* AppDelegate.swift in Sources */,
@@ -799,6 +799,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -806,6 +807,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -856,6 +858,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -863,6 +866,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
