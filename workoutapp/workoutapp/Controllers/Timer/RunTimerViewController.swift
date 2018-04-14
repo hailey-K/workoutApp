@@ -34,7 +34,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         IntervalTableView.delegate = self
         IntervalTableView.dataSource = self
         
-        IntervalLabel.text = "1/"+NumberOfSetsString
+        IntervalLabel.text = "1/" + NumberOfSetsString
         ElapsedLabel.text = "00:00"
         MinutesLabel.text = "00"
         SecondsLabel.text = "00"
@@ -99,6 +99,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         elapsedTime = 0
         
+        
         for cell in IntervalTableView.visibleCells as! Array<IntervalViewCell> {
             cell.CurrentIntervalLabel?.text = ""
         }
@@ -108,6 +109,11 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         let timerArray = getSelectedTimeArray()
         let selector = #selector(delegateTimer)
         timer.invalidate()
+        
+        let currentInterval = Int((selectedIndexPath?.row)! / 2) + 1
+        if(currentInterval <= Int(NumberOfSetsString)!){
+            IntervalLabel.text = String(format: "%d/%d", currentInterval, Int(NumberOfSetsString)!)
+        }
         
         if(selectedIndexPath?.row == IntervalTableView.numberOfRows(inSection: 0) - 1){
             self.setTimerLabel(minutes: 0, seconds: 0)
@@ -144,11 +150,27 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         totalSec = (secForHighIntensity+secForLowIntensity)*Int32(NumberOfSetsString)!%60
         totalMin = (minForHighIntensity+minForLowIntensity)*Int32(NumberOfSetsString)!+(secForHighIntensity+secForLowIntensity-totalSec)
         Total = "\(totalMin):\(totalSec)"
+        setRemainingTime()
         return Total
     }
     
     @objc func setRemainingTime(){
+        let selectedIndexPath = IntervalTableView.indexPathForSelectedRow
+        var selectedRow = selectedIndexPath?.row
+        let totalWorkCount = Int(NumberOfSetsString)! * 2
         
+        /*while(selectedRow! <= totalWorkCount){
+            selectedRow += 1
+            
+            if(selectedRow % 2 == 0){
+                
+            }
+            else{}
+        }
+        
+        for index in stride(from: (selectedIndexPath?.row)!, to: totalWorkCount, by: 1){
+            var a = ""
+        }*/
     }
     
     func getSelectedIntervalViewCell() -> IntervalViewCell{
@@ -161,6 +183,11 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     @objc func setNextInterval(){
         let nextIndexPath = IndexPath(row: (IntervalTableView.indexPathForSelectedRow?.row)! + 1, section: 0)
         IntervalTableView.selectRow(at: nextIndexPath, animated: false, scrollPosition: .top)
+        
+        let currentInterval = Int(nextIndexPath.row / 2) + 1
+        if(currentInterval <= Int(NumberOfSetsString)!){
+            IntervalLabel.text = String(format: "%d/%d", currentInterval, Int(NumberOfSetsString)!)
+        }
     }
     
     @objc func getSelectedTimeArray() -> Array<String>{
@@ -180,6 +207,11 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         var timerArray = getSelectedTimeArray()
         let totalTime = Double(timerArray[0])! * 60 + Double(timerArray[1])!
         elapsedTime += 1
+        totalElapsedTime += 1
+        
+        let minutes = Int(totalElapsedTime / 60)
+        let seconds = Int(totalElapsedTime.truncatingRemainder(dividingBy: 60))
+        ElapsedLabel.text = String(format: "%02d:%02d", minutes, seconds)
         
         let currentTime = totalTime - elapsedTime
         
@@ -251,6 +283,8 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         initializeInterval()
         timer.invalidate()
         btnStart.setTitle(EStartStopLabel.Start.rawValue, for: .normal)
+        ElapsedLabel.text = "00:00"
+        IntervalLabel.text = "1/" + NumberOfSetsString
     }
     
 }
