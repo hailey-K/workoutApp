@@ -27,6 +27,8 @@
 		5FC3D3C32068759F00A9212F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC3D3C22068759F00A9212F /* libsqlite3.tbd */; };
 		5FF9DF3A20818DCE003BE128 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9DF3920818DCE003BE128 /* CalendarVars.swift */; };
 		5FF9DF3C20818E2A003BE128 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9DF3B20818E2A003BE128 /* DateCollectionViewCell.swift */; };
+		5FF9DF4B2081A2B5003BE128 /* IntervalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9DF4A2081A2B5003BE128 /* IntervalViewCell.swift */; };
+		5FF9DF4F2081A37D003BE128 /* EStartStopLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9DF4E2081A37D003BE128 /* EStartStopLabel.swift */; };
 		D206E8F3206F5D740017081F /* TimerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D206E8F2206F5D740017081F /* TimerDB.swift */; };
 		D206E8F5206F62430017081F /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D206E8F4206F62430017081F /* TimerModel.swift */; };
 		D206E8FA206F68D20017081F /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D206E8F9206F68D20017081F /* TimerViewController.swift */; };
@@ -174,6 +176,8 @@
 		5FC3D3FA2068761600A9212F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FF9DF3920818DCE003BE128 /* CalendarVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		5FF9DF3B20818E2A003BE128 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		5FF9DF4A2081A2B5003BE128 /* IntervalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalViewCell.swift; sourceTree = "<group>"; };
+		5FF9DF4E2081A37D003BE128 /* EStartStopLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EStartStopLabel.swift; sourceTree = "<group>"; };
 		D206E8F2206F5D740017081F /* TimerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDB.swift; sourceTree = "<group>"; };
 		D206E8F4206F62430017081F /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		D206E8F9206F68D20017081F /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				D206E8F9206F68D20017081F /* TimerViewController.swift */,
 				D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */,
 				D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */,
+				5FF9DF4A2081A2B5003BE128 /* IntervalViewCell.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				5FC3D39E2068420500A9212F /* ResultModel.swift */,
+				5FF9DF4E2081A37D003BE128 /* EStartStopLabel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -705,7 +711,9 @@
 				5F29A12A205B2D9900282E79 /* PlanAndMarkViewController.swift in Sources */,
 				D261505A2079B1BB00DED1C4 /* WorkoutListDB.swift in Sources */,
 				5FC3D3A9206847A300A9212F /* LapModel.swift in Sources */,
+				5FF9DF4B2081A2B5003BE128 /* IntervalViewCell.swift in Sources */,
 				5F29A12E205B520300282E79 /* PopupNoteViewController.swift in Sources */,
+				5FF9DF4F2081A37D003BE128 /* EStartStopLabel.swift in Sources */,
 				5F7D48D4206099DE0010E37F /* StopwatchViewController.swift in Sources */,
 				5FC3D39A20683C4400A9212F /* DBUtil.swift in Sources */,
 				D2D648EC207AF4C700980820 /* WorkoutItemTableViewCell.swift in Sources */,

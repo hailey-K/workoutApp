@@ -10,48 +10,37 @@ import UIKit
 
 class RunTimerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var RemainingLabel: UILabel!
-    @IBOutlet weak var IntervalLabel: UILabel!
     @IBOutlet weak var ElapsedLabel: UILabel!
-    @IBOutlet weak var TimerLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var IntervalLabel: UILabel!
+    @IBOutlet weak var MinutesLabel: UILabel!
+    @IBOutlet weak var SecondsLabel: UILabel!
+    @IBOutlet weak var IntervalTableView: UITableView!
+    @IBOutlet weak var btnStart: UIButton!
+    
     var TimerNameString = String()
     var NumberOfSetsString = String()
     var HighIntensityString = String()
     var LowIntensityString = String()
     var TimerId = String()
     var TimerList = [String]()
+    var timer = Timer()
+    var elapsedTime:Double = 0
+    var totalElapsedTime:Double = 0
+    let firstIndexPath = IndexPath(row: 0, section: 0)
+    let CurrentIntervalLabelText = "CURRENT INTERVAL"
+
     override func viewDidLoad() {
         super.viewDidLoad()
-       //testing
-        // Do any additional setup after loading the view.
-        tableView.delegate = self
-        tableView.dataSource = self
+        IntervalTableView.delegate = self
+        IntervalTableView.dataSource = self
         
         IntervalLabel.text = "1/"+NumberOfSetsString
         ElapsedLabel.text = "00:00"
-        TimerLabel.text = HighIntensityString
+        MinutesLabel.text = "00"
+        SecondsLabel.text = "00"
         RemainingLabel.text = calculateRemaining()
         
-        for i in 0..<Int(self.NumberOfSetsString)!*2
-        {
-            //low intensity
-            if i%2==0
-            {
-               /// TimerList.append(LowIntensityString)
-                TimerList.append("low")
-            }
-            //high intensity
-            else
-            {
-                 //TimerList.append(HighIntensityString)
-                     TimerList.append("high")
-            }
-        }
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func exitBt(_ sender: Any) {
+        IntervalTableView.selectRow(at: firstIndexPath, animated: false, scrollPosition: .top)
     }
     
     override func didReceiveMemoryWarning(){
@@ -60,40 +49,80 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TimerList.count
+        return Int(NumberOfSetsString)! * 2 + 1// TimerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TimerViewCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = TimerList[indexPath.row]
-        if(indexPath.row%2==0){
-         cell.backgroundColor = UIColor.red
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! IntervalViewCell
+        
+        if(indexPath.row % 2==0){
+            cell.backgroundColor = UIColor.red
+            cell.IntensityLabel?.text = "High"
+            cell.TimerLabel?.text = HighIntensityString
         }
         else{
             cell.backgroundColor = UIColor.blue
+            cell.IntensityLabel?.text = "Low"
+            cell.TimerLabel?.text = LowIntensityString
         }
-      //  cell.timerIndexPath = indexPath
+        
+        if(indexPath.row == IntervalTableView.numberOfRows(inSection: 0) - 1){
+            cell.backgroundColor = UIColor.yellow
+            cell.IntensityLabel?.text = "End"
+            cell.TimerLabel?.text = ""
+            cell.CurrentIntervalLabel?.text = ""
+        }
+        else if((IntervalTableView.indexPathForSelectedRow == nil && indexPath.row == 0) || IntervalTableView.indexPathForSelectedRow == indexPath){
+            cell.CurrentIntervalLabel?.text = CurrentIntervalLabelText
+            let timerArray = HighIntensityString.components(separatedBy: ":")
+            //let timerArray = getSelectedTimeArray()
+            self.setTimerLabel(minutes: Int(timerArray[0])!, seconds:Int(timerArray[1])!)
+        }
+        else{
+            cell.CurrentIntervalLabel?.text = ""
+            
+        }
+        
+        /*if((IntervalTableView.indexPathForSelectedRow == nil && indexPath.row == 1) || (IntervalTableView.indexPathForSelectedRow?.row)! + 1 == indexPath.row){
+         cell.CurrentIntervalLabel?.text = "UP NEXT"
+         
+         }*/
+        //  cell.timerIndexPath = indexPath
         return cell
-  
+        
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
     
-    /*
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fruits.count
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        elapsedTime = 0
+        
+        for cell in IntervalTableView.visibleCells as! Array<IntervalViewCell> {
+            cell.CurrentIntervalLabel?.text = ""
+        }
+        
+        IntervalTableView.selectRow(at: indexPath, animated: false, scrollPosition: .top)
+        var selectedIndexPath = IntervalTableView.indexPathForSelectedRow;
+        let timerArray = getSelectedTimeArray()
+        let selector = #selector(delegateTimer)
+        timer.invalidate()
+        
+        if(selectedIndexPath?.row == IntervalTableView.numberOfRows(inSection: 0) - 1){
+            self.setTimerLabel(minutes: 0, seconds: 0)
+            btnStart.setTitle(EStartStopLabel.Start.rawValue, for: .normal)
+        }
+        else{
+            let cell = getSelectedIntervalViewCell()
+            cell.CurrentIntervalLabel?.text = CurrentIntervalLabelText
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: selector, userInfo: nil, repeats: true)
+            btnStart.setTitle(EStartStopLabel.Stop.rawValue, for: .normal)
+            self.setTimerLabel(minutes: Int(timerArray[0])!, seconds:Int(timerArray[1])!)
+            
+        }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-        
-        cell.textLabel?.text = fruits[indexPath.row]
-        
-        return cell
-    }
- */
     func calculateRemaining()-> String
     {
         var minForHighIntensity = Int32()
@@ -106,7 +135,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let highIntensityArray = HighIntensityString.components(separatedBy: ":")
         let lowIntensityArray = LowIntensityString.components(separatedBy: ":")
-
+        
         minForHighIntensity = Int32(highIntensityArray[0])!
         secForHighIntensity = Int32(highIntensityArray[1])!
         minForLowIntensity = Int32(lowIntensityArray[0])!
@@ -117,15 +146,111 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         Total = "\(totalMin):\(totalSec)"
         return Total
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @objc func setRemainingTime(){
+        
     }
-    */
+    
+    func getSelectedIntervalViewCell() -> IntervalViewCell{
+        let selectedIndexPath = IntervalTableView.indexPathForSelectedRow
+        let cell = IntervalTableView.cellForRow(at: selectedIndexPath!) as! IntervalViewCell
+        
+        return cell
+    }
+    
+    @objc func setNextInterval(){
+        let nextIndexPath = IndexPath(row: (IntervalTableView.indexPathForSelectedRow?.row)! + 1, section: 0)
+        IntervalTableView.selectRow(at: nextIndexPath, animated: false, scrollPosition: .top)
+    }
+    
+    @objc func getSelectedTimeArray() -> Array<String>{
+        let cell = getSelectedIntervalViewCell()
+        let timerLabel = cell.TimerLabel
+        var timerArray = timerLabel?.text?.components(separatedBy: ":")
+        
+        if(timerArray?.count == 1){
+            timerArray = ["0", "0"]
+        }
+        
+        return timerArray!
+    }
+    
+    @objc func delegateTimer()
+    {
+        var timerArray = getSelectedTimeArray()
+        let totalTime = Double(timerArray[0])! * 60 + Double(timerArray[1])!
+        elapsedTime += 1
+        
+        let currentTime = totalTime - elapsedTime
+        
+        if(currentTime <= 0){
+            let listCount = IntervalTableView.numberOfRows(inSection: 0) - 2
+            let currentIndex = IntervalTableView.indexPathForSelectedRow?.row
+            var cell = getSelectedIntervalViewCell()
+            cell.CurrentIntervalLabel?.text = ""
+            setNextInterval()
+            
+            if(listCount == currentIndex){
+                setTimerLabel(minutes: 0, seconds: 0)
+                btnStart.setTitle(EStartStopLabel.Start.rawValue, for: .normal)
+                timer.invalidate()
+            }
+            else{
+                timerArray = getSelectedTimeArray()
+                self.setTimerLabel(minutes: Int(timerArray[0])!, seconds:Int(timerArray[1])!)
+                cell = self.getSelectedIntervalViewCell()
+                cell.CurrentIntervalLabel?.text = CurrentIntervalLabelText
+                elapsedTime = 0
+            }
+        }
+        else{
+            let minutes = Int(currentTime / 60)
+            let seconds = Int(currentTime.truncatingRemainder(dividingBy: 60))
+            self.setTimerLabel(minutes: minutes, seconds: seconds)
+        }
+    }
+    
+    @objc func setTimerLabel(minutes: Int, seconds: Int){
+        MinutesLabel.text = String(format: "%02d", minutes)
+        SecondsLabel.text = String(format: "%02d", seconds)
+    }
+    
+    @IBAction func clickStartBtn(_ sender: Any) {
+        startOrStopInterval()
+    }
+    
+    func startOrStopInterval(){
+        var selectedIndexPath = IntervalTableView.indexPathForSelectedRow;
+        
+        if(btnStart.titleLabel?.text == EStartStopLabel.Start.rawValue){
+            if(selectedIndexPath == nil || selectedIndexPath?.row == IntervalTableView.numberOfRows(inSection: 0) - 1){
+                initializeInterval()
+            }
+            
+            btnStart.setTitle(EStartStopLabel.Stop.rawValue, for: .normal)
+            
+            let selector = #selector(delegateTimer)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: selector, userInfo: nil, repeats: true)
+        }
+        else{
+            btnStart.setTitle(EStartStopLabel.Start.rawValue, for: .normal)
+            timer.invalidate()
+        }
+        
+        selectedIndexPath = IntervalTableView.indexPathForSelectedRow;
+    }
+    
+    func initializeInterval(){
+        elapsedTime = 0
+        IntervalTableView.selectRow(at: firstIndexPath, animated: false, scrollPosition: .top)
+        let timerArray = getSelectedTimeArray()
+        self.setTimerLabel(minutes: Int(timerArray[0])!, seconds:Int(timerArray[1])!)
+    }
 
+    @IBAction func clickResetBtn(_ sender: Any) {
+        initializeInterval()
+        timer.invalidate()
+        btnStart.setTitle(EStartStopLabel.Start.rawValue, for: .normal)
+    }
+    
 }
