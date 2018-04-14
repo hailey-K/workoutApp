@@ -1,27 +1,22 @@
 //
-//  TimerViewCell.swift
+//  WorkoutItemTableViewCell.swift
 //  workoutapp
 //
-//  Created by hyerim on 2018-04-01.
+//  Created by hyerim on 2018-04-08.
 //  Copyright © 2018 hch_enterprise. All rights reserved.
 //
 
 import UIKit
 
-class TimerViewCell: UITableViewCell {
+class WorkoutItemTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var detailBtn: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
-    var timerIndexPath = IndexPath()
-    
+    @IBOutlet weak var workoutItem: UITextField!
+    var workoutItemIndexPath = IndexPath()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    @IBAction func clickDetailBtn(_ sender: Any) {
-        //self.setSelected(true, animated: true)
-    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

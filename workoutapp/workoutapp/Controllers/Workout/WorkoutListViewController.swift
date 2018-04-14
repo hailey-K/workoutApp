@@ -2,7 +2,7 @@
 //  WorkoutListViewController.swift
 //  workoutapp
 //
-//  Created by BSH on 2018. 3. 15..
+//  Created by hyerim on 2018. 3. 15..
 //  Copyright © 2018년 hch_enterprise. All rights reserved.
 //
 
@@ -76,10 +76,17 @@ class WorkoutListViewController: UIViewController , UITableViewDataSource, UITab
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
             (action) in
+            /*
+            var workoutList = WorkoutListDB().getWorkoutListNameList(WorkoutId: self.selectedWorkoutId)
+            for i in 0..<workoutList.count
+            {
+                WorkoutListDB().deleteWorkoutList(WorkoutListId: workoutList[i].WorkoutListId)
+            }
+ */
+            WorkoutListDB().deleteWorkoutList(WorkoutId: self.selectedWorkoutId)
             WorkoutDB().deleteWorkout(WorkoutId: self.selectedWorkoutId)
             self.workoutListName = WorkoutDB().getWorkoutNameList()
             self.workoutList.reloadData()
-            //  self.delete = true
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {
             (action) in

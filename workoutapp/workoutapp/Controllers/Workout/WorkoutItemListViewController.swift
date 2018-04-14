@@ -2,37 +2,63 @@
 //  WorkoutItemListViewController.swift
 //  workoutapp
 //
-//  Created by BSH on 2018. 3. 15..
+//  Created by hyerim on 2018. 3. 15..
 //  Copyright © 2018년 hch_enterprise. All rights reserved.
 //
 
 import UIKit
 
-class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate,UIToolbarDelegate{
- 
+class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate,UIToolbarDelegate,UITableViewDelegate,UITableViewDataSource{
     
     @IBOutlet weak var Bt: UIButton!
     @IBOutlet weak var workoutName: UITextField!
-    @IBOutlet weak var workoutTextbox: UITextField!
     var workoutItemListName = WorkoutItemDB().getWorkoutItemNameList()
-   // @IBOutlet weak var toolBar: UIToolbar!
+    var workoutItemsList=[WorkoutListModel]()
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var dropdown: UIPickerView!
+    @IBOutlet weak var workoutItemsTableView: UITableView!
+    var workoutTempTextbox:UITextField!
     var WorkoutNameString = String()
     var WorkoutIdString = String()
+    var numberOfWorkoutList = [String]()
     var BtText = String()
     var selectedWorkoutItemId = Int32()
     var selectedWorkoutItemName = String()
     var userWorkoutItemNameTextField :UITextField?
+    var indexPathForCell = IndexPath()
+    var indexPathForDropdown = Int()
     override func viewDidLoad() {
         super.viewDidLoad()
         dropdown.delegate = self
         dropdown.dataSource = self
-        workoutTextbox.delegate = self
-  //      toolBar.delegate=self
+        workoutItemsTableView.delegate=self
+        workoutItemsTableView.dataSource=self
         toolBar.delegate=self
         Bt.setTitle(BtText, for: UIControlState.normal)
         workoutName.text = WorkoutNameString
+
+        //create new workout id
+        if(WorkoutIdString != "")
+        {
+            workoutItemsList = WorkoutListDB().getWorkoutListNameList(WorkoutId: Int32(WorkoutIdString)!)
+            if(workoutItemsList.count != 0)
+            {
+                for i in 0..<workoutItemsList.count
+                {
+                   numberOfWorkoutList.append(WorkoutItemDB().getWorkoutItemName(workoutItemId:workoutItemsList[i].WorkoutItemId))
+                }
+            }
+            else
+            {
+                numberOfWorkoutList.append("")
+            }
+        }
+        else
+        {
+          numberOfWorkoutList.append("")
+        }
+   
+      
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(donePicker))
         let addWorkoutItemButton = UIBarButtonItem(title: "Add Workout Item", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(addWorkoutItem))
         toolBar.setItems([cancelButton,addWorkoutItemButton], animated: false)
@@ -43,29 +69,27 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
         
  
     }
-        
-  //      let toolBar = UIToolbar()
-//        toolBar.barStyle = UIBarStyle.default
-//        toolBar.isTranslucent = true
-  //      toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
-      //  toolBar.sizeToFit()
-       /*
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
-        
-        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
- */
-    /*
-        let doneButton = UIBarButtonItem(barButtonSystemItem:.done,target:nil, action:nil)
-        toolBar.setItems([doneButton], animated: false)
-        //toolBar.isUserInteractionEnabled = true
-        
-        workoutTextbox.inputView = dropdown
-        workoutTextbox.inputAccessoryView = toolBar
-        }
-  */
- 
+    
+    
+    @IBAction func AddWorkoutItmesBt(_ sender: Any) {
+        numberOfWorkoutList.append("")
+        self.workoutItemsTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+        return numberOfWorkoutList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = workoutItemsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WorkoutItemTableViewCell
+        cell.workoutItem.delegate = self
+        cell.workoutItemIndexPath = indexPath
+        cell.workoutItem.text = numberOfWorkoutList[indexPath.row]
+        print(cell.workoutItem.text! + "tableview cell for row at")
+        return cell
+    }
+
     @IBAction func addWorkoutItem(_ sender: Any) {
         // create the alert
         let alert = UIAlertController(title: "Workout Item Name", message: nil, preferredStyle: UIAlertControllerStyle.alert)
@@ -80,7 +104,6 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
       
         // show the alert
         self.present(alert, animated: true, completion: nil)
-
     }
     
     func okayBt_workoutItemadd(alert: UIAlertAction)
@@ -110,22 +133,88 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
             userWorkoutItemNameTextField?.placeholder="workout item name"
 
     }
+    func removeEmptyTextField()->[String]
+    {
+        var tmpNumberOfWorkoutList = [String]()
+        for i in 0..<numberOfWorkoutList.count
+        {
+            if numberOfWorkoutList[i] == ""
+            {
+                tmpNumberOfWorkoutList.append(numberOfWorkoutList[i])
+            }
+        }
+        return tmpNumberOfWorkoutList
+    }
     @IBAction func createBt(_ sender: Any) {
         if BtText=="Create"
         {
-            let workoutModel = WorkoutModel.init(WorkoutId: 0, WorkoutName: workoutName.text!)
-            WorkoutDB().insertWorkout(workoutModel: workoutModel)
+            var haveEmptyTextField = removeEmptyTextField()
+            if(haveEmptyTextField.count == 0)
+            {
+                let workoutModel = WorkoutModel.init(WorkoutId: 0, WorkoutName: workoutName.text!)
+                WorkoutDB().insertWorkout(workoutModel: workoutModel)
+                CreateOrUpdateWorkoutItems(type:"Create",workoutId:WorkoutDB().getWorkoutId(WorkoutName:workoutName.text!))
+            }
+            else
+            {
+                // create the alert
+                let alert = UIAlertController(title: "Workout", message: "Please fill all of the empty textbox.", preferredStyle: UIAlertControllerStyle.alert)
+                
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         else if BtText=="Save"
         {
-            let workoutModel = WorkoutModel.init(WorkoutId: Int32(WorkoutIdString)!, WorkoutName: workoutName.text!)
-            WorkoutDB().updateWorkout(workoutModel: workoutModel)
+            var haveEmptyTextField = removeEmptyTextField()
+            if(haveEmptyTextField.count == 0)
+            {
+                let workoutModel = WorkoutModel.init(WorkoutId: Int32(WorkoutIdString)!, WorkoutName: workoutName.text!)
+                WorkoutDB().updateWorkout(workoutModel: workoutModel)
+                CreateOrUpdateWorkoutItems(type:"Update",workoutId:Int32(WorkoutIdString)!)
+            }
+            else
+            {
+                // create the alert
+                let alert = UIAlertController(title: "Workout", message: "Please fill all of the empty textbox.", preferredStyle: UIAlertControllerStyle.alert)
+                
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    func CreateOrUpdateWorkoutItems(type:String,workoutId:Int32)
+    {
+        if(type=="Create")
+        {
+            for i in 0..<numberOfWorkoutList.count
+            {
+               var workoutItemId = WorkoutItemDB().getWorkoutItemId(workoutName:numberOfWorkoutList[i])
+               WorkoutListDB().insertWorkoutList(workoutListModel:WorkoutListModel.init(WorkoutListId: 0, WorkoutItemId: workoutItemId, WorkoutId: workoutId))
+            }
+        }
+        else if(type=="Update")
+        {
+            //delete workout list for the workoutId
+            WorkoutListDB().deleteWorkoutList(WorkoutId:workoutId)
+           
+            //insert all new workout list for workoutId
+            for i in 0..<numberOfWorkoutList.count
+            {
+               var workoutItemId = WorkoutItemDB().getWorkoutItemId(workoutName:numberOfWorkoutList[i])
+               WorkoutListDB().insertWorkoutList(workoutListModel:WorkoutListModel.init(WorkoutListId: 0, WorkoutItemId: workoutItemId, WorkoutId: workoutId))
+            }
         }
     }
     @objc func donePicker() {
         self.dropdown.isHidden = true
         self.toolBar.isHidden=true
-        workoutTextbox.resignFirstResponder()
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -140,15 +229,26 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.workoutTextbox.text = self.workoutItemListName[row].WorkoutItemName
         self.dropdown.isHidden = true
         self.toolBar.isHidden=true
+        let cell = workoutItemsTableView.cellForRow(at: indexPathForCell)  as! WorkoutItemTableViewCell
+        cell.workoutItem.text = self.workoutItemListName[row].WorkoutItemName
+        numberOfWorkoutList[indexPathForCell.row] = self.workoutItemListName[row].WorkoutItemName
     }
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if (textField == self.workoutTextbox)
-        {
-            self.dropdown.isHidden = false;
+        
+       let cells = self.workoutItemsTableView.visibleCells as! Array<WorkoutItemTableViewCell>
+        
+        for cell in cells {
+            if(textField == cell.workoutItem)
+            {
+            self.dropdown.isHidden = false
             self.toolBar.isHidden=false
+            indexPathForCell = cell.workoutItemIndexPath
+            workoutTempTextbox = cell.workoutItem
+            break
+            }
         }
     }
     @IBAction func longPress(_ recognizer: UILongPressGestureRecognizer) {
@@ -160,16 +260,8 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
          var index = self.dropdown.selectedRow(inComponent: 0)
          selectedWorkoutItemId = self.workoutItemListName[index].WorkoutItemId
          selectedWorkoutItemName = self.workoutItemListName[index].WorkoutItemName
-          //  let index = dropdown.indexPathForRow(at: point)
-          //  self.selectedWorkoutItemId = Int32(workoutItemListName[index!.row])
            createAlert()
-            //if(self.delete==true)
-            // {
-            //  let timerModel = TimerModel.init(TimerId:Int32(timerListName[indexPath].TimerId)!,TimerName: timerListName[indexPath].TimerName,NumberOfSets : Int32(timerListName[indexPath].NumberOfSets)!, HighInetensity: timerListName[indexPath].HighInetensity, LowIntensity: timerListName[indexPath].LowIntensity)
-            //TimerDB().deleteTimer(TimerId:timerId)
-            //}
         }
-            //cell.isHighlighted
         else {
             return
         }
@@ -183,15 +275,12 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
          WorkoutItemDB().deleteWorkoutItem(WorkoutItemId: self.selectedWorkoutItemId)
          self.workoutItemListName = WorkoutItemDB().getWorkoutItemNameList()
          self.dropdown.reloadAllComponents()
-         //  self.delete = true
          }))
          alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {
          (action) in
-         //  self.delete = false
          alert.dismiss(animated: true, completion: nil)
          }))
          self.present(alert, animated: true)
-        
     }
     func updateWorkoutItem(alert: UIAlertAction)
     {
@@ -202,8 +291,6 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
     }
     func createAlert()
     {
-
-        
         // create the alert
         let alert = UIAlertController(title: "Workout Item Name", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         alert.addTextField(configurationHandler: userWorkoutItemNameTextField)
@@ -220,17 +307,7 @@ class WorkoutItemListViewController: UIViewController,UIPickerViewDataSource, UI
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
- 
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

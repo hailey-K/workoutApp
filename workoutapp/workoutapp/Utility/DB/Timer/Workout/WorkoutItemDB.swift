@@ -2,7 +2,7 @@
 //  WorkoutItem.swift
 //  workoutapp
 //
-//  Created by Hailey on 2018-04-07.
+//  Created by hyerim on 2018-04-07.
 //  Copyright © 2018 hch_enterprise. All rights reserved.
 //
 
@@ -68,6 +68,50 @@ class WorkoutItemDB
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
         }
+    }
+    func getWorkoutItemId(workoutName:String) -> Int32
+    {
+    let db = DBUtil().getConnectione()
+    var workoutItemId = Int32()
+    //statement pointer
+    var stmt:OpaquePointer?
+    let queryString = "SELECT WorkoutItemId FROM WorkoutItem WHERE WorkoutItemName = '\(workoutName)';"
+    
+    //preparing the query
+    if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+    let errmsg = String(cString: sqlite3_errmsg(db)!)
+    print("error preparing insert: \(errmsg)")
+    return workoutItemId
+    }
+    
+    //traversing through all the records
+    while(sqlite3_step(stmt) == SQLITE_ROW){
+    workoutItemId = sqlite3_column_int(stmt, 0)
+    }
+    
+    return workoutItemId
+    }
+    func getWorkoutItemName(workoutItemId:Int32) -> String
+    {
+        let db = DBUtil().getConnectione()
+        var workoutItemName = String()
+        //statement pointer
+        var stmt:OpaquePointer?
+        let queryString = "SELECT WorkoutItemName FROM WorkoutItem WHERE WorkoutItemId = '\(workoutItemId)';"
+        
+        //preparing the query
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error preparing insert: \(errmsg)")
+            return workoutItemName
+        }
+        
+        //traversing through all the records
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            workoutItemName =  String(cString: sqlite3_column_text(stmt, 0))
+        }
+        
+        return workoutItemName
     }
     func getWorkoutItemNameList() -> [WorkoutItemModel]
     {

@@ -2,7 +2,7 @@
 //  StopwatchDB.swift
 //  workoutapp
 //
-//  Created by BSH on 2018. 3. 25..
+//  Created by hyerim on 2018. 3. 25..
 //  Copyright © 2018년 hch_enterprise. All rights reserved.
 //
 
