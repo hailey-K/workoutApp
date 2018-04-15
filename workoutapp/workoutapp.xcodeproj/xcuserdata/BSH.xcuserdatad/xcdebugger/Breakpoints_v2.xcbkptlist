@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Timer/StopwatchViewController.swift"
-            timestampString = "544838639.108439"
+            timestampString = "545450095.841114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "labsReset(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Timer/RunTimerViewController.swift"
-            timestampString = "545448248.502823"
+            timestampString = "545450095.84124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "setRemainingTime()"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Timer/RunTimerViewController.swift"
-            timestampString = "545448248.503967"
+            timestampString = "545450095.8424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "setRemainingTime()"
             landmarkType = "7">
          </BreakpointContent>

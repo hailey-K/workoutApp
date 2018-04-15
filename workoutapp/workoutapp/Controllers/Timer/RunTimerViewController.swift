@@ -100,6 +100,9 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         elapsedTime = 0
         
+        if(timer.isValid){
+          timer.invalidate()
+        }
         
         for cell in IntervalTableView.visibleCells as! Array<IntervalViewCell> {
             cell.CurrentIntervalLabel?.text = ""
@@ -109,7 +112,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         var selectedIndexPath = IntervalTableView.indexPathForSelectedRow;
         let timerArray = getSelectedTimeArray()
         let selector = #selector(delegateTimer)
-        timer.invalidate()
+        //timer.invalidate()
         
         let currentInterval = Int((selectedIndexPath?.row)! / 2) + 1
         if(currentInterval <= Int(NumberOfSetsString)!){

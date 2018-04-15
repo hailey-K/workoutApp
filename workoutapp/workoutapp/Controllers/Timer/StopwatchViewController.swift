@@ -37,7 +37,10 @@ class StopwatchControllerViewController: UIViewController, UITableViewDelegate, 
         {
             startStopBt.setTitle(EStartStopLabel.Start.rawValue, for: .normal)
             labsResetBt.setTitle(ELapResetLabel.Lap.rawValue, for: .normal)
-            //stopwatchLabel.text = String("00:00.00")
+            minutesLabel.text = "00"
+            secondsLabel.text = "00"
+            milisecondsLabel.text = "00"
+
             labsResetBt.isEnabled = false
             lapsList = []
             elapsedTime = 0
