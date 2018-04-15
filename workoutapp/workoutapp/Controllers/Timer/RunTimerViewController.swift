@@ -28,6 +28,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     var totalElapsedTime:Double = 0
     let firstIndexPath = IndexPath(row: 0, section: 0)
     let CurrentIntervalLabelText = "CURRENT INTERVAL"
+    var selectedRow = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +111,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         
         IntervalTableView.selectRow(at: indexPath, animated: false, scrollPosition: .top)
         var selectedIndexPath = IntervalTableView.indexPathForSelectedRow;
+        selectedRow = (selectedIndexPath?.row)!
         let timerArray = getSelectedTimeArray()
         let selector = #selector(delegateTimer)
         //timer.invalidate()
@@ -161,8 +163,8 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @objc func setRemainingTime(){
-        let selectedIndexPath = IntervalTableView.indexPathForSelectedRow
-        let selectedRow = selectedIndexPath!.row
+        //let selectedIndexPath = IntervalTableView.indexPathForSelectedRow
+        //let selectedRow = selectedIndexPath!.row
         let totalWorkCount = Int(NumberOfSetsString)! * 2
         var totalIntensityMinute = 0;
         var totalIntensitySecond = 0;
@@ -209,7 +211,9 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @objc func setNextInterval(){
-        let nextIndexPath = IndexPath(row: (IntervalTableView.indexPathForSelectedRow?.row)! + 1, section: 0)
+        //let nextIndexPath = IndexPath(row: (IntervalTableView.indexPathForSelectedRow?.row)! + 1, section: 0)
+        let nextIndexPath = IndexPath(row: selectedRow + 1, section: 0)
+        
         IntervalTableView.selectRow(at: nextIndexPath, animated: false, scrollPosition: .top)
         
         let currentInterval = Int(nextIndexPath.row / 2) + 1
@@ -219,21 +223,22 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @objc func getSelectedTimeArray() -> Array<String>{
-        let cell = getSelectedIntervalViewCell()
-        let timerLabel = cell.TimerLabel
-        var timerArray = timerLabel?.text?.components(separatedBy: ":")
-        
-        if(timerArray?.count == 1){
+        //let cell = getSelectedIntervalViewCell()
+        //let timerLabel = cell.TimerLabel
+        //var timerArray = timerLabel?.text?.components(separatedBy: ":")
+        var timerArray = (selectedRow % 2 == 0) ? HighIntensityString.components(separatedBy: ":") : LowIntensityString.components(separatedBy: ":")
+     
+        /*if(timerArray?.count == 1){
             timerArray = ["0", "0"]
-        }
+        }*/
         
-        return timerArray!
+        return timerArray
     }
     
     @objc func delegateTimer()
     {
-        let selectedIndexPath = IntervalTableView.indexPathForSelectedRow
-        if(selectedIndexPath != nil && (selectedIndexPath?.row)! < Int(NumberOfSetsString)! * 2){
+        //let selectedIndexPath = IntervalTableView.indexPathForSelectedRow
+        //if(selectedIndexPath != nil && (selectedIndexPath?.row)! < Int(NumberOfSetsString)! * 2){
             var timerArray = getSelectedTimeArray()
             let totalTime = Double(timerArray[0])! * 60 + Double(timerArray[1])!
             elapsedTime += 1
@@ -256,11 +261,12 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
             if(currentTime <= 0){
                 let listCount = IntervalTableView.numberOfRows(inSection: 0) - 2
                 let currentIndex = IntervalTableView.indexPathForSelectedRow?.row
-                var cell = getSelectedIntervalViewCell()
-                cell.CurrentIntervalLabel?.text = ""
                 setNextInterval()
+                selectedRow += 1
                 
                 if(listCount == currentIndex){
+                    var cell = getSelectedIntervalViewCell()
+                    cell.CurrentIntervalLabel?.text = ""
                     setTimerLabel(minutes: 0, seconds: 0)
                     btnStart.setTitle(EStartStopLabel.Start.rawValue, for: .normal)
                     timer.invalidate()
@@ -268,6 +274,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
                 else{
                     timerArray = getSelectedTimeArray()
                     self.setTimerLabel(minutes: Int(timerArray[0])!, seconds:Int(timerArray[1])!)
+                    var cell = getSelectedIntervalViewCell()
                     cell = self.getSelectedIntervalViewCell()
                     cell.CurrentIntervalLabel?.text = CurrentIntervalLabelText
                     elapsedTime = 0
@@ -278,7 +285,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
                 let seconds = Int(currentTime.truncatingRemainder(dividingBy: 60))
                 self.setTimerLabel(minutes: minutes, seconds: seconds)
             }
-        }
+        //}
     }
     
     @objc func setTimerLabel(minutes: Int, seconds: Int){
@@ -294,9 +301,12 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         var selectedIndexPath = IntervalTableView.indexPathForSelectedRow;
         
         if(btnStart.titleLabel?.text == EStartStopLabel.Start.rawValue){
-            if(selectedIndexPath == nil || selectedIndexPath?.row == IntervalTableView.numberOfRows(inSection: 0) - 1){
+            if(selectedRow == 0){
                 initializeInterval()
             }
+            /*if(selectedIndexPath == nil || selectedIndexPath?.row == IntervalTableView.numberOfRows(inSection: 0) - 1){
+                initializeInterval()
+            }*/
             
             btnStart.setTitle(EStartStopLabel.Stop.rawValue, for: .normal)
             
@@ -310,7 +320,8 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
         
         selectedIndexPath = IntervalTableView.indexPathForSelectedRow;
         
-        let currentInterval = Int((selectedIndexPath?.row)! / 2) + 1
+        //let currentInterval = Int((selectedIndexPath?.row)! / 2) + 1
+        let currentInterval = selectedRow + 1
         if(currentInterval <= Int(NumberOfSetsString)!){
             IntervalLabel.text = String(format: "%d/%d", currentInterval, Int(NumberOfSetsString)!)
         }
@@ -318,6 +329,7 @@ class RunTimerViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func initializeInterval(){
         elapsedTime = 0
+        selectedRow = 0
         IntervalTableView.selectRow(at: firstIndexPath, animated: false, scrollPosition: .top)
         let timerArray = getSelectedTimeArray()
         self.setTimerLabel(minutes: Int(timerArray[0])!, seconds:Int(timerArray[1])!)
