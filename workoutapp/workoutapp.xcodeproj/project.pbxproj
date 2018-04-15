@@ -20,6 +20,10 @@
 		5F2E32E420577C24004CB6DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2E32E320577C24004CB6DE /* Assets.xcassets */; };
 		5F2E32E720577C24004CB6DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2E32E520577C24004CB6DE /* LaunchScreen.storyboard */; };
 		5F7D48D4206099DE0010E37F /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D48D3206099DE0010E37F /* StopwatchViewController.swift */; };
+		5F9284A12083F4B1006C762C /* WorkoutNoteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F92849F2083F4B1006C762C /* WorkoutNoteDB.swift */; };
+		5F9284A22083F4B1006C762C /* NoteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9284A02083F4B1006C762C /* NoteDB.swift */; };
+		5F9284A62083F4D4006C762C /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9284A42083F4D4006C762C /* NoteModel.swift */; };
+		5F9284A72083F4D4006C762C /* WorkoutNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9284A52083F4D4006C762C /* WorkoutNoteModel.swift */; };
 		5FC3D39A20683C4400A9212F /* DBUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D39920683C4400A9212F /* DBUtil.swift */; };
 		5FC3D39F2068420500A9212F /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D39E2068420500A9212F /* ResultModel.swift */; };
 		5FC3D3A52068474100A9212F /* StopwatchDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3D3A42068474100A9212F /* StopwatchDB.swift */; };
@@ -125,6 +129,10 @@
 		5F2E32E620577C24004CB6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F2E32E820577C24004CB6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F7D48D3206099DE0010E37F /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
+		5F92849F2083F4B1006C762C /* WorkoutNoteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutNoteDB.swift; sourceTree = "<group>"; };
+		5F9284A02083F4B1006C762C /* NoteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDB.swift; sourceTree = "<group>"; };
+		5F9284A42083F4D4006C762C /* NoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		5F9284A52083F4D4006C762C /* WorkoutNoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutNoteModel.swift; sourceTree = "<group>"; };
 		5FC3D39920683C4400A9212F /* DBUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUtil.swift; sourceTree = "<group>"; };
 		5FC3D39E2068420500A9212F /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		5FC3D3A42068474100A9212F /* StopwatchDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchDB.swift; sourceTree = "<group>"; };
@@ -301,6 +309,24 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		5F92849E2083F4B1006C762C /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				5F92849F2083F4B1006C762C /* WorkoutNoteDB.swift */,
+				5F9284A02083F4B1006C762C /* NoteDB.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		5F9284A32083F4D4006C762C /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				5F9284A42083F4D4006C762C /* NoteModel.swift */,
+				5F9284A52083F4D4006C762C /* WorkoutNoteModel.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		5FC3D39320667A5600A9212F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +339,7 @@
 		5FC3D39620683BBA00A9212F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5F9284A32083F4D4006C762C /* Notes */,
 				5FC3D39B2068414600A9212F /* Common */,
 				5FC3D39720683BF800A9212F /* Timer */,
 			);
@@ -358,6 +385,7 @@
 		5FC3D3A32068471600A9212F /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				5F92849E2083F4B1006C762C /* Notes */,
 				5FC3D39920683C4400A9212F /* DBUtil.swift */,
 				5FC3D3A02068462E00A9212F /* Timer */,
 			);
@@ -711,9 +739,11 @@
 				5F29A12A205B2D9900282E79 /* PlanAndMarkViewController.swift in Sources */,
 				D261505A2079B1BB00DED1C4 /* WorkoutListDB.swift in Sources */,
 				5FC3D3A9206847A300A9212F /* LapModel.swift in Sources */,
+				5F9284A22083F4B1006C762C /* NoteDB.swift in Sources */,
 				5FF9DF4B2081A2B5003BE128 /* IntervalViewCell.swift in Sources */,
 				5F29A12E205B520300282E79 /* PopupNoteViewController.swift in Sources */,
 				5FF9DF4F2081A37D003BE128 /* EStartStopLabel.swift in Sources */,
+				5F9284A62083F4D4006C762C /* NoteModel.swift in Sources */,
 				5F7D48D4206099DE0010E37F /* StopwatchViewController.swift in Sources */,
 				5FC3D39A20683C4400A9212F /* DBUtil.swift in Sources */,
 				D2D648EC207AF4C700980820 /* WorkoutItemTableViewCell.swift in Sources */,
@@ -725,6 +755,7 @@
 				5F298735205ACADD00F36622 /* TimerListViewController.swift in Sources */,
 				5F2E32DF20577C24004CB6DE /* ViewController.swift in Sources */,
 				D26150582079A6DB00DED1C4 /* WorkoutModel.swift in Sources */,
+				5F9284A72083F4D4006C762C /* WorkoutNoteModel.swift in Sources */,
 				5F29A126205ADC5500282E79 /* WorkoutItemListViewController.swift in Sources */,
 				D206E8F3206F5D740017081F /* TimerDB.swift in Sources */,
 				5FC3D39F2068420500A9212F /* ResultModel.swift in Sources */,
@@ -736,6 +767,7 @@
 				5F2E32DD20577C24004CB6DE /* AppDelegate.swift in Sources */,
 				D206E8F5206F62430017081F /* TimerModel.swift in Sources */,
 				5FC3D3A52068474100A9212F /* StopwatchDB.swift in Sources */,
+				5F9284A12083F4B1006C762C /* WorkoutNoteDB.swift in Sources */,
 				D26150602079B21800DED1C4 /* WorkoutItemModel.swift in Sources */,
 				5F29A12C205B4C2900282E79 /* PopupViewController.swift in Sources */,
 			);

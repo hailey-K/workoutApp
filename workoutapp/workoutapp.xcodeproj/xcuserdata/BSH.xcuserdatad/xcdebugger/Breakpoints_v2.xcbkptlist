@@ -378,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Timer/RunTimerViewController.swift"
-            timestampString = "545451738.3473589"
+            timestampString = "545518825.926433"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
@@ -394,12 +394,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "workoutapp/Controllers/Timer/RunTimerViewController.swift"
-            timestampString = "545451738.348623"
+            timestampString = "545518825.926932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
             endingLineNumber = "175"
             landmarkName = "setRemainingTime()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "workoutapp/Utility/DB/Notes/NoteDB.swift"
+            timestampString = "545518825.927292"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "createNoteTable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -36,6 +36,7 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var DayCounter = 0
     
+    var selectedIndex = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +66,10 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
             
         }
         print("\(cell.DateLabel.text!)")
-        //change color
-        cell.backgroundColor = UIColor.red;
+        
+        selectedIndex = indexPath.row
+        
+        self.Calendar.reloadData()
     }
     
     @IBAction func Back(_ sender: Any) {
@@ -235,6 +238,13 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
             cell.backgroundColor = UIColor.red
             cell.DateLabel.textColor = UIColor.white
         }
+        else if(selectedIndex == indexPath.row){
+            cell.backgroundColor = UIColor.green
+        }
+        
+        //change color
+        //cell.backgroundColor = UIColor.red;
+        //cell.selectedBackgroundView?.backgroundColor = UIColor.red
         
         return cell
     }
@@ -255,10 +265,19 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
         
         //notes popup
         if segue.identifier == "popupForNotesSegue"{
-            let popupVC = segue.destination as! PopupViewController
-            popupVC.noteString = "";
-            popupVC.workoutString = "";
+            let popupVC = segue.destination as! PopupNoteViewController
+            //popupVC.noteString = "";
+            //popupVC.workoutString = "";
         }
+        //workout note popup
+        if segue.identifier == "popupForWowkoutNotesSegue"{
+            let popupWorkoutVC = segue.destination as! PopupWorkoutViewController
+            
+          //  popupWorkoutVC.noteString = "";
+        //    popupWorkoutVC.workoutString = "";
+        }
+        
+        
         }
     /*
      // MARK: - Navigation
