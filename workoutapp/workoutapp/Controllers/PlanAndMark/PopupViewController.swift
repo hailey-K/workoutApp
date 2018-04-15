@@ -10,9 +10,21 @@ import UIKit
 
 class PopupViewController: UIViewController {
 
+    @IBOutlet weak var noteBt: UIButton!
+    @IBOutlet weak var workoutBt: UIButton!
+    var noteString = String()
+    var workoutString = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if(noteString != "" && noteString != nil)
+        {
+            noteBt.setTitle(noteString, for: UIControlState.normal)
+        }
+        if(workoutString != "" && workoutString != nil)
+        {
+            workoutBt.setTitle(workoutString, for: UIControlState.normal)
+        }
         // Do any additional setup after loading the view.
     }
 
