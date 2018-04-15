@@ -754,7 +754,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="DateLabel" destination="Z3o-bR-AWY" id="aWo-nV-dlF"/>
-                                            <segue destination="ZWX-yN-Odp" kind="modal" id="6EL-i5-4ne"/>
+                                            <segue destination="ZWX-yN-Odp" kind="modal" identifier="NotesSegue" id="6EL-i5-4ne"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -71,7 +71,7 @@ class NoteDB
             print("error creating table: \(errmsg)")
         }
     }
-    func getNoteList(date:Date) -> [NoteModel]
+    func getNoteList(date:String) -> [NoteModel]
     {
         let db = DBUtil().getConnectione()
         var noteList = [NoteModel]()

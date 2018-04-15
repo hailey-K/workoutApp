@@ -38,6 +38,8 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var selectedIndex = Int()
     
+    var selectedDate = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -238,8 +240,12 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
             cell.backgroundColor = UIColor.red
             cell.DateLabel.textColor = UIColor.white
         }
-        else if(selectedIndex == indexPath.row){
+        if(selectedIndex == indexPath.row){
             cell.backgroundColor = UIColor.green
+            let currentYear = calendar.component(.year, from: date)
+            let currentDate = "\(cell.DateLabel.text!)"
+            selectedDate = "\(currentMonth)/\(currentDate)/\(currentYear)"
+            print("selected : "+selectedDate)
         }
         
         //change color
@@ -264,20 +270,19 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
         // Pass the selected object to the new view controller.
         
         //notes popup
-        if segue.identifier == "popupForNotesSegue"{
-            let popupVC = segue.destination as! PopupNoteViewController
+        if segue.identifier == "NotesSegue"{
+            let popupVC = segue.destination as! PopupViewController
+            
+            var noteModel = NoteDB().getNoteList(date:selectedDate)
+            if(noteModel.count != 0)
+            {
+               popupVC.noteString = noteModel[0].title
+            }
+        
             //popupVC.noteString = "";
             //popupVC.workoutString = "";
         }
-        //workout note popup
-        if segue.identifier == "popupForWowkoutNotesSegue"{
-            let popupWorkoutVC = segue.destination as! PopupWorkoutViewController
-            
-          //  popupWorkoutVC.noteString = "";
-        //    popupWorkoutVC.workoutString = "";
-        }
-        
-        
+
         }
     /*
      // MARK: - Navigation
