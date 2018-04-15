@@ -9,10 +9,16 @@
 import UIKit
 
 class PopupNoteViewController: UIViewController {
-  
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var contentsTextField: UITextView!
+   // var title? = String()
+  //  var contents = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+  //      titleTextField.text=title
+  //      contentsTextField.text = contents
         // Do any additional setup after loading the view.
     }
 
