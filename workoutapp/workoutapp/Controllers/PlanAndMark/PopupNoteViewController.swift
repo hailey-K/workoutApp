@@ -12,23 +12,24 @@ class PopupNoteViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextField: UITextView!
-   // var title? = String()
-  //  var contents = String()
+    var titleString = String()
+    var contentsString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  //      titleTextField.text=title
-  //      contentsTextField.text = contents
+        titleTextField.text=titleString
+        contentsTextField.text = contentsString
         // Do any additional setup after loading the view.
+    }
+    @IBAction func okBt(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func closePopup(_ sender: Any) {
-                dismiss(animated: true, completion: nil)
-    }
+  
     
     /*
     // MARK: - Navigation

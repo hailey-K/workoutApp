@@ -13,6 +13,7 @@ class PopupViewController: UIViewController {
     @IBOutlet weak var noteBt: UIButton!
     @IBOutlet weak var workoutBt: UIButton!
     var noteString = String()
+    var noteContent = String()
     var workoutString = String()
     
     override func viewDidLoad() {
@@ -34,6 +35,24 @@ class PopupViewController: UIViewController {
     }
     @IBAction func closePopup(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        //note popup
+        if segue.identifier == "popupForNotesSegue"{
+            let popupNoteVC = segue.destination as! PopupNoteViewController
+            if(noteString != "" || noteContent != "" )
+            {
+                popupNoteVC.titleString = noteString
+                popupNoteVC.contentsString = noteContent
+            }
+        }
+        
+        //workout note popup
+        
     }
     /*
     // MARK: - Navigation

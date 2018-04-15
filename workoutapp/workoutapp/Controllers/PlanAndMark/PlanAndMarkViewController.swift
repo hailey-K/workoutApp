@@ -277,6 +277,7 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
             if(noteModel.count != 0)
             {
                popupVC.noteString = noteModel[0].title
+               popupVC.noteContent = noteModel[0].contents
             }
         
             //popupVC.noteString = "";
