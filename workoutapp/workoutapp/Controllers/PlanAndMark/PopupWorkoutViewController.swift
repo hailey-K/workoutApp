@@ -8,12 +8,16 @@
 
 import UIKit
 
-class PopupWorkoutViewController: UIViewController {
-
- 
+class PopupWorkoutViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
+    @IBOutlet weak var workoutNotePicker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        workoutNotePicker.delegate = self
+        workoutNotePicker.dataSource = self
 
+        //workoutNotePicker.delegate = self
+        //workoutNotePicker.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -24,6 +28,27 @@ class PopupWorkoutViewController: UIViewController {
  
     @IBAction func closePopup(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 2//workoutItemListName.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        self.view.endEditing(true)
+        return "adsf"//workoutItemListName[row].WorkoutItemName
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        /*self.dropdown.isHidden = true
+        self.toolBar.isHidden=true
+        let cell = workoutItemsTableView.cellForRow(at: indexPathForCell)  as! WorkoutItemTableViewCell
+        cell.workoutItem.text = self.workoutItemListName[row].WorkoutItemName
+        numberOfWorkoutList[indexPathForCell.row] = self.workoutItemListName[row].WorkoutItemName
+ */
     }
     /*
     // MARK: - Navigation
