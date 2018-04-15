@@ -65,6 +65,8 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
             
         }
         print("\(cell.DateLabel.text!)")
+        //change color
+        cell.backgroundColor = UIColor.red;
     }
     
     @IBAction func Back(_ sender: Any) {
