@@ -79,6 +79,7 @@ class NoteDB
         //statement pointer
         var stmt:OpaquePointer?
         let queryString = "SELECT * FROM Note WHERE date = '\(date)';"
+    
         
         //preparing the query
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
@@ -86,8 +87,7 @@ class NoteDB
             print("error preparing insert: \(errmsg)")
             return noteList
         }
-        
-        
+   
         //traversing through all the records
         while(sqlite3_step(stmt) == SQLITE_ROW){
             let noteId = sqlite3_column_int(stmt, 0)

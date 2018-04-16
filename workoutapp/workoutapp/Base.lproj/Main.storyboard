@@ -838,6 +838,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0i4-QG-8sZ"/>
                     </view>
+                    <connections>
+                        <outlet property="noteBt" destination="tVM-VS-iEh" id="bRm-K0-rfA"/>
+                        <outlet property="workoutBt" destination="Ogs-qG-1fr" id="AnM-ar-sHZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPZ-ct-wfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

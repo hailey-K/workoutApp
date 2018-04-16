@@ -10,8 +10,8 @@ import UIKit
 
 class PopupViewController: UIViewController {
 
-    @IBOutlet weak var noteBt: UIButton!
     @IBOutlet weak var workoutBt: UIButton!
+    @IBOutlet weak var noteBt: UIButton!
     var noteString = String()
     var noteContent = String()
     var workoutString = String()
@@ -25,7 +25,7 @@ class PopupViewController: UIViewController {
             {
                 noteString = noteModel[0].title
                 noteContent = noteModel[0].contents
-                noteBt.setTitle(noteString, for: UIControlState.normal)
+                noteBt.setTitle(noteString, for: .normal)
             }
             
             if(workoutString != "" && workoutString != nil)
