@@ -16,6 +16,7 @@ class PopupViewController: UIViewController {
     var noteContent = String()
     var workoutString = String()
     var selectedDate = String()
+    var noteId = Int32()
     override func viewDidLoad() {
         super.viewDidLoad()
         if(selectedDate != "")
@@ -26,6 +27,7 @@ class PopupViewController: UIViewController {
                 noteString = noteModel[0].title
                 noteContent = noteModel[0].contents
                 noteBt.setTitle(noteString, for: .normal)
+                noteId = noteModel[0].noteId
             }
             
             if(workoutString != "" && workoutString != nil)
@@ -57,6 +59,7 @@ class PopupViewController: UIViewController {
             {
                 popupNoteVC.titleString = noteString
                 popupNoteVC.contentsString = noteContent
+                popupNoteVC.noteId = self.noteId
             }
         }
         
