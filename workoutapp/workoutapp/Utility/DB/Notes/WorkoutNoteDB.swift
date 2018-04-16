@@ -24,6 +24,21 @@ class WorkoutNoteDB
             print("Create Success")
         }
     }
+    func deleteWorkoutNote(noteWorkoutId:Int32)
+    {
+        self.createWorkoutNoteTable()
+        let db = DBUtil().getConnectione()
+        
+        //creating a statement
+        var stmt: OpaquePointer?
+        //the delete query
+        let queryString = "DELETE FROM WorkoutNote WHERE noteWorkoutId = '\(noteWorkoutId)'"
+        
+        if sqlite3_exec(db, queryString, nil, nil, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error creating table: \(errmsg)")
+        }
+    }
     func updateWorkoutNoteForMark(mark:Int32,noteWorkoutId:Int32)
     {
         self.createWorkoutNoteTable()
