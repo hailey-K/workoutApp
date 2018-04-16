@@ -41,6 +41,21 @@ class NoteDB
             print("error creating table: \(errmsg)")
         }
     }
+    func updateNoteForMark(mark:Int32,noteId:Int32)
+    {
+        self.createNoteTable()
+        let db = DBUtil().getConnectione()
+        
+        //creating a statement
+        var stmt: OpaquePointer?
+        //the update query
+        let queryString = "UPDATE Note SET mark = '\(mark)' WHERE noteId = '\(noteId)'"
+        
+        if sqlite3_exec(db, queryString, nil, nil, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error creating table: \(errmsg)")
+        }
+    }
     func updateNote(noteModel:NoteModel)
     {
         self.createNoteTable()

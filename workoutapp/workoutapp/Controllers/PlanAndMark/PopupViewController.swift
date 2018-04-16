@@ -17,9 +17,16 @@ class PopupViewController: UIViewController {
     var workoutString = String()
     var selectedDate = String()
     var noteId = Int32()
+    var workoutNoteId = Int32()
+    var markForNote = Int32(0)
+    var markForWorkoutNote = Int32(0)
+     var workoutName = ""
+    @IBOutlet weak var noteCheckBt: UIButton!
+    @IBOutlet weak var workoutNoteCheckBt: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if(selectedDate != "")
         {
             var noteModel = NoteDB().getNoteList(date:selectedDate)
@@ -30,14 +37,17 @@ class PopupViewController: UIViewController {
                 noteContent = noteModel[0].contents
                 noteBt.setTitle(noteString, for: .normal)
                 noteId = noteModel[0].noteId
+                markForNote = noteModel[0].mark
             }
             
-            var workoutName = ""
+           
             
             if(workoutNoteModelList.count > 0){
                 for i in 0..<workoutNoteModelList.count{
                     if(workoutNoteModelList[i].isSelected == true){
                         workoutName = workoutNoteModelList[i].workoutName
+                        markForWorkoutNote = workoutNoteModelList[i].mark
+                        workoutNoteId = workoutNoteModelList[i].noteWorkoutId
                     }
                 }
             }
@@ -51,10 +61,56 @@ class PopupViewController: UIViewController {
                 workoutBt.setTitle(workoutName, for: UIControlState.normal)
             }
         }
-       
+        if(markForNote==0)//false , uncheck
+        {
+            noteCheckBt.setImage(UIImage(named:"unCheckmark"), for: .normal)
+            noteCheckBt.isSelected = false
+        }
+        else if(markForNote==1 && noteString != "")// true , check
+        {
+            noteCheckBt.setImage(UIImage(named:"Checkmark"), for: .normal)
+            noteCheckBt.isSelected = true
+        }
+        if(markForWorkoutNote==0)//false , uncheck
+        {
+            workoutNoteCheckBt.setImage(UIImage(named:"unCheckmark"), for: .normal)
+            workoutNoteCheckBt.isSelected = false
+        }
+        else if(markForWorkoutNote==1 && workoutName != "")// true, check
+        {
+            workoutNoteCheckBt.setImage(UIImage(named:"Checkmark"), for: .normal)
+            workoutNoteCheckBt.isSelected = true
+        }
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func workoutNoteCheckBt(_ sender: Any) {
+        if(workoutNoteCheckBt.isSelected == false && workoutName != "")
+        {
+            workoutNoteCheckBt.setImage(UIImage(named:"Checkmark"), for: .normal)
+            workoutNoteCheckBt.isSelected = true
+            WorkoutNoteDB().updateWorkoutNoteForMark(mark:1,noteWorkoutId:workoutNoteId)
+        }
+        else if(workoutNoteCheckBt.isSelected == true && workoutName != "")
+        {
+            workoutNoteCheckBt.setImage(UIImage(named:"unCheckmark"), for: .normal)
+            workoutNoteCheckBt.isSelected = false
+            WorkoutNoteDB().updateWorkoutNoteForMark(mark:0,noteWorkoutId:workoutNoteId)
+        }
+    }
+    @IBAction func noteCheckBt(_ sender: Any) {
+        if(noteCheckBt.isSelected == false && noteString != "")
+        {
+            noteCheckBt.setImage(UIImage(named:"Checkmark"), for: .normal)
+            noteCheckBt.isSelected = true
+            NoteDB().updateNoteForMark(mark:1,noteId:noteId)
+        }
+        else if(noteCheckBt.isSelected == true && noteString != "")
+        {
+            noteCheckBt.setImage(UIImage(named:"unCheckmark"), for: .normal)
+            noteCheckBt.isSelected = false
+              NoteDB().updateNoteForMark(mark:0,noteId:noteId)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -24,7 +24,21 @@ class WorkoutNoteDB
             print("Create Success")
         }
     }
-    
+    func updateWorkoutNoteForMark(mark:Int32,noteWorkoutId:Int32)
+    {
+        self.createWorkoutNoteTable()
+        let db = DBUtil().getConnectione()
+        
+        //creating a statement
+        var stmt: OpaquePointer?
+        //the update query
+        let queryString = "UPDATE WorkoutNote SET mark = '\(mark)' WHERE noteWorkoutId = '\(noteWorkoutId)'"
+        
+        if sqlite3_exec(db, queryString, nil, nil, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error creating table: \(errmsg)")
+        }
+    }
     func insertOrUpdateWorkoutNote(workoutNote:WorkoutNoteModel)
     {
         self.createWorkoutNoteTable()

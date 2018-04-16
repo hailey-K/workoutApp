@@ -808,15 +808,31 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogs-qG-1fr">
-                                                <rect key="frame" x="0.0" y="62" width="308" height="39"/>
+                                                <rect key="frame" x="0.0" y="72" width="308" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Create/Edit workout"/>
                                                 <connections>
                                                     <segue destination="zjt-xq-kQJ" kind="presentation" identifier="popupForWowkoutNotesSegue" id="X9p-cW-kHm"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-q0-cLo">
+                                                <rect key="frame" x="15" y="27" width="35" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="unCheckmark"/>
+                                                <connections>
+                                                    <action selector="noteCheckBt:" destination="ZWX-yN-Odp" eventType="touchUpInside" id="Lck-tg-LA4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnO-vR-YtX">
+                                                <rect key="frame" x="15" y="71" width="35" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="unCheckmark"/>
+                                                <connections>
+                                                    <action selector="workoutNoteCheckBt:" destination="ZWX-yN-Odp" eventType="touchUpInside" id="vdx-9a-UrH"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="308" id="CEE-7t-fWn"/>
                                             <constraint firstAttribute="height" constant="186" id="y4o-3K-i1G"/>
@@ -840,7 +856,9 @@
                     </view>
                     <connections>
                         <outlet property="noteBt" destination="tVM-VS-iEh" id="bRm-K0-rfA"/>
+                        <outlet property="noteCheckBt" destination="dHR-q0-cLo" id="G41-Bw-dta"/>
                         <outlet property="workoutBt" destination="Ogs-qG-1fr" id="AnM-ar-sHZ"/>
+                        <outlet property="workoutNoteCheckBt" destination="dnO-vR-YtX" id="C4U-LS-YYz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPZ-ct-wfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -960,7 +978,7 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                             </pickerView>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="308" id="G25-1I-kE7"/>
                                                             <constraint firstAttribute="height" constant="186" id="sOg-nF-IiH"/>
@@ -1079,6 +1097,9 @@
             <point key="canvasLocation" x="-1074" y="2988"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="unCheckmark" width="90" height="90"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="b2B-Jq-5tA"/>
         <segue reference="lcJ-fl-vSd"/>
