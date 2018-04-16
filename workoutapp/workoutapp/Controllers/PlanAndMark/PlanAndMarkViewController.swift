@@ -38,7 +38,7 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
     
     var selectedIndex = Int()
     
-    var selectedDate = String()
+    var selectedDate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,8 +67,7 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
             fatalError()
             
         }
-        print("\(cell.DateLabel.text!)")
-        
+     
         selectedIndex = indexPath.row
         
         self.Calendar.reloadData()
@@ -150,6 +149,7 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
             currentMonth = Months[month]
             
             MonthLabel.text = "\(currentMonth) \(year)"
+            
             Calendar.reloadData()
         }
     }
@@ -242,49 +242,41 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
         }
         if(selectedIndex == indexPath.row){
             cell.backgroundColor = UIColor.green
-            let currentYear = calendar.component(.year, from: date)
             let currentDate = "\(cell.DateLabel.text!)"
-            selectedDate = "\(currentMonth)/\(currentDate)/\(currentYear)"
-            print("selected : "+selectedDate)
+            selectedDate = "\(currentMonth)/\(currentDate)/\(year)"
         }
-        
-        //change color
-        //cell.backgroundColor = UIColor.red;
-        //cell.selectedBackgroundView?.backgroundColor = UIColor.red
-        
+  
         return cell
     }
     
-    
-    
-    @IBAction func dateClick(_ sender: Any) {
-        
-    }
-    
-    
-    
-    
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+
         //notes popup
         if segue.identifier == "NotesSegue"{
             let popupVC = segue.destination as! PopupViewController
+           
+              if let indexPath = Calendar?.indexPathsForSelectedItems?.first {
+                switch Direction{
+                case 0:
+                    selectedDate = "\(indexPath.row + 1 - NumberOfEmptyBox)"
+                case 1:
+                    selectedDate = "\(indexPath.row + 1 - NextNumberOfEmptyBox)"
+                case -1:
+                    selectedDate = "\(indexPath.row + 1 - PreviousNumberOfEmptyBox)"
+                default:
+                    fatalError()
+                    
+                }
+                selectedDate = "\(currentMonth)/\(selectedDate)/\(year)"
+                print(selectedDate)
+                popupVC.selectedDate = selectedDate
+                }
             
-            var noteModel = NoteDB().getNoteList(date:selectedDate)
-            if(noteModel.count != 0)
-            {
-               popupVC.noteString = noteModel[0].title
-               popupVC.noteContent = noteModel[0].contents
-            }
-        
-            //popupVC.noteString = "";
-            //popupVC.workoutString = "";
         }
-
-        }
+    }
     /*
      // MARK: - Navigation
      
@@ -294,6 +286,6 @@ class PlanAndMarkViewController: UIViewController, UICollectionViewDelegate, UIC
      // Pass the selected object to the new view controller.
      }
      */
-    
-}
+   
+    }
 

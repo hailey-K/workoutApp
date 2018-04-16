@@ -34,7 +34,7 @@ class NoteDB
         //creating a statement
         var stmt: OpaquePointer?
         //the insert query
-        let queryString = "INSERT INTO Note (title, contents,date, Bool) VALUES ('\(noteModel.title)','\(noteModel.contents)','\(noteModel.date)','\(noteModel.mark)')"
+        let queryString = "INSERT INTO Note (title, contents,date, mark) VALUES ('\(noteModel.title)','\(noteModel.contents)','\(noteModel.date)',\(noteModel.mark))"
         
         if sqlite3_exec(db, queryString, nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)

@@ -15,17 +15,25 @@ class PopupViewController: UIViewController {
     var noteString = String()
     var noteContent = String()
     var workoutString = String()
-    
+    var selectedDate = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(noteString != "" && noteString != nil)
+        if(selectedDate != "")
         {
-            noteBt.setTitle(noteString, for: UIControlState.normal)
+            var noteModel = NoteDB().getNoteList(date:selectedDate)
+            if(noteModel.count != 0)
+            {
+                noteString = noteModel[0].title
+                noteContent = noteModel[0].contents
+                noteBt.setTitle(noteString, for: UIControlState.normal)
+            }
+            
+            if(workoutString != "" && workoutString != nil)
+            {
+                workoutBt.setTitle(workoutString, for: UIControlState.normal)
+            }
         }
-        if(workoutString != "" && workoutString != nil)
-        {
-            workoutBt.setTitle(workoutString, for: UIControlState.normal)
-        }
+       
         // Do any additional setup after loading the view.
     }
 
@@ -44,6 +52,7 @@ class PopupViewController: UIViewController {
         //note popup
         if segue.identifier == "popupForNotesSegue"{
             let popupNoteVC = segue.destination as! PopupNoteViewController
+            popupNoteVC.selectedDate = selectedDate
             if(noteString != "" || noteContent != "" )
             {
                 popupNoteVC.titleString = noteString
