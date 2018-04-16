@@ -17,11 +17,13 @@ class PopupViewController: UIViewController {
     var workoutString = String()
     var selectedDate = String()
     var noteId = Int32()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if(selectedDate != "")
         {
             var noteModel = NoteDB().getNoteList(date:selectedDate)
+            var workoutNoteModelList = WorkoutNoteDB().getWorkoutListWithSelecedItem(selectedDate:selectedDate)
             if(noteModel.count != 0)
             {
                 noteString = noteModel[0].title
@@ -30,9 +32,23 @@ class PopupViewController: UIViewController {
                 noteId = noteModel[0].noteId
             }
             
+            var workoutName = ""
+            
+            if(workoutNoteModelList.count > 0){
+                for i in 0..<workoutNoteModelList.count{
+                    if(workoutNoteModelList[i].isSelected == true){
+                        workoutName = workoutNoteModelList[i].workoutName
+                    }
+                }
+            }
+            
             if(workoutString != "" && workoutString != nil)
             {
                 workoutBt.setTitle(workoutString, for: UIControlState.normal)
+            }
+            
+            if(workoutName != ""){
+                workoutBt.setTitle(workoutName, for: UIControlState.normal)
             }
         }
        
@@ -62,7 +78,10 @@ class PopupViewController: UIViewController {
                 popupNoteVC.noteId = self.noteId
             }
         }
-        
+        else if segue.identifier == "popupForWowkoutNotesSegue"{
+            let popupWorkoutNoteVC = segue.destination as! PopupWorkoutViewController
+            popupWorkoutNoteVC.selectedDate = selectedDate
+        }
         //workout note popup
         
     }

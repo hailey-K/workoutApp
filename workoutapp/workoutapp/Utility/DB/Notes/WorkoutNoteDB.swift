@@ -25,43 +25,79 @@ class WorkoutNoteDB
         }
     }
     
-    /*func insertOrUpdateWorkoutNote(workoutNote:WorkoutNoteModel)
+    func insertOrUpdateWorkoutNote(workoutNote:WorkoutNoteModel)
     {
         self.createWorkoutNoteTable()
         let db = DBUtil().getConnectione()
         
         //creating a statement
         var stmt: OpaquePointer?
-        //the insert query
-        let queryString = "INSERT INTO WorkoutNote (workoutId, mark, date) VALUES ('" + workoutNote.workoutId + "', '" + workoutNote.mark + "', '" + workoutNote.date + "')"
         
-        if sqlite3_exec(db, queryString, nil, nil, nil) != SQLITE_OK {
+        let countQueryString = "SELECT COUNT(*) FROM WorkoutNote WHERE date = '" + workoutNote.date + "'"
+        
+
+        if sqlite3_prepare(db, countQueryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error creating table: \(errmsg)")
+            print("error preparing insert: \(errmsg)")
+            //return workoutNoteList
         }
+        else{
+            var workoutNoteCount = 0
+            while(sqlite3_step(stmt) == SQLITE_ROW){
+                workoutNoteCount = Int(sqlite3_column_int(stmt, 0))
+                break
+            }
+            
+            var queryString = String()
+            if(workoutNoteCount == 0){
+                //the insert query
+                queryString = "INSERT INTO WorkoutNote (workoutId, mark, date) VALUES ('\(workoutNote.workoutId)', '\(workoutNote.mark)', '\(workoutNote.date)')"
+            }
+            else{
+                queryString = "UPDATE WorkoutNote SET workoutId = '\(workoutNote.workoutId)' WHERE date = '\(workoutNote.date)'"
+            }
+            
+            if sqlite3_exec(db, queryString, nil, nil, nil) != SQLITE_OK {
+                let errmsg = String(cString: sqlite3_errmsg(db)!)
+                print("error insertOrUpdate table: \(errmsg)")
+            }
+            
+            sqlite3_finalize(stmt);
+            sqlite3_close(db);
+        }
+        
         
         //readValues()
     }
     
-    func getWorkoutListWithSelecedItem() -> [WorkoutNoteModel]{
+    func getWorkoutListWithSelecedItem(selectedDate:String) -> [WorkoutNoteModel]{
+        self.createWorkoutNoteTable()
         let db = DBUtil().getConnectione()
         var workoutNoteList = [WorkoutNoteModel]()
         //statement pointer
         var stmt:OpaquePointer?
 
-        let queryString = "SELECT WN.* FROM Workout W LEFT JOIN WorkoutNote WN ON W.WorkoutId = WN.WorkoutId"
-        
-        while(sqlite3_step(stmt) == SQLITE_ROW){
-            let workoutNoteId = sqlite3_column_int(stmt, 0)
-            let workoutId = sqlite3_column_int(stmt, 1)
-            let mark = sqlite3_column_int(stmt, 2)
-            let workoutName = "aa"
-            let date = String(cString: sqlite3_column_text(stmt, 3))
-            let isSelected = false
-            //adding values to list
-            workoutNoteList.append(WorkoutNoteModel.init(noteWorkoutId: workoutNoteId, workoutId: workoutId, mark: mark, date: date, workoutName: workoutName, isSelected: isSelected))
-            //heroList.append(Hero(id: Int(id), name: String(describing: name), powerRanking: Int(powerrank)))
+        let queryString = "SELECT W.WorkoutId, W.WorkoutName, IFNULL(WN.noteWorkoutId, 0) noteWorkoutId, IFNULL(WN.mark, 0) mark, IFNULL(WN.date, '') date FROM Workout W LEFT JOIN (SELECT * FROM WorkoutNote WHERE date = '" + selectedDate + "') WN ON W.WorkoutId = WN.workoutId"
+
+        //preparing the query
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error preparing insert: \(errmsg)")
+            return workoutNoteList
         }
-    }*/
+
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            let workoutId = sqlite3_column_int(stmt, 0)
+            let workoutName = String(cString: sqlite3_column_text(stmt, 1))
+            let noteWorkoutId = sqlite3_column_int(stmt, 2)
+            let mark = sqlite3_column_int(stmt, 3)
+            let date = String(cString: sqlite3_column_text(stmt, 4))
+            let isSelected = (date != "") ? true : false
+            //adding values to list
+            workoutNoteList.append(WorkoutNoteModel.init(noteWorkoutId: noteWorkoutId, workoutId: workoutId, mark: mark, date: date, workoutName: workoutName, isSelected: isSelected))
+        }
+        
+        return workoutNoteList
+    }
     
 }
