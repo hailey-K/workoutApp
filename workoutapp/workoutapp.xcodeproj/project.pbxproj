@@ -42,16 +42,16 @@
 		D261505C2079B1D300DED1C4 /* WorkoutItemDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261505B2079B1D300DED1C4 /* WorkoutItemDB.swift */; };
 		D261505E2079B20800DED1C4 /* WorkoutListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261505D2079B20800DED1C4 /* WorkoutListModel.swift */; };
 		D26150602079B21800DED1C4 /* WorkoutItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D261505F2079B21800DED1C4 /* WorkoutItemModel.swift */; };
+		D2A9123020854A1300FD6405 /* LapModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A9122F20854A1300FD6405 /* LapModelTest.swift */; };
+		D2A9123220854A4A00FD6405 /* ResultModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A9123120854A4A00FD6405 /* ResultModelTest.swift */; };
+		D2A9123420854A5800FD6405 /* WorkoutItemModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A9123320854A5800FD6405 /* WorkoutItemModelTest.swift */; };
+		D2A9123620854A6A00FD6405 /* WorkoutListModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A9123520854A6A00FD6405 /* WorkoutListModelTest.swift */; };
+		D2A9123820854A7900FD6405 /* WorkoutModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A9123720854A7900FD6405 /* WorkoutModelTest.swift */; };
+		D2A9123A20854A8600FD6405 /* TimerModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A9123920854A8600FD6405 /* TimerModelTest.swift */; };
 		D2ADC7A22071D26F007CA3AC /* TimerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */; };
 		D2ADC7A62071E54E007CA3AC /* RunTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */; };
 		D2D648EC207AF4C700980820 /* WorkoutItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648EB207AF4C700980820 /* WorkoutItemTableViewCell.swift */; };
 		D2D648F5207BE33800980820 /* workoutappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648F4207BE33800980820 /* workoutappTests.swift */; };
-		D2D648FE207BE47F00980820 /* TimerModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648FD207BE47F00980820 /* TimerModelTest.swift */; };
-		D2D64903207BE4CD00980820 /* ResultModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D648FF207BE4CD00980820 /* ResultModelTest.swift */; };
-		D2D64904207BE4CD00980820 /* WorkoutItemModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D64900207BE4CD00980820 /* WorkoutItemModelTest.swift */; };
-		D2D64905207BE4CD00980820 /* WorkoutModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D64901207BE4CD00980820 /* WorkoutModelTest.swift */; };
-		D2D64906207BE4CD00980820 /* WorkoutListModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D64902207BE4CD00980820 /* WorkoutListModelTest.swift */; };
-		D2D64908207BE50400980820 /* LapModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D64907207BE50400980820 /* LapModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,18 +195,18 @@
 		D261505B2079B1D300DED1C4 /* WorkoutItemDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemDB.swift; sourceTree = "<group>"; };
 		D261505D2079B20800DED1C4 /* WorkoutListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListModel.swift; sourceTree = "<group>"; };
 		D261505F2079B21800DED1C4 /* WorkoutItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemModel.swift; sourceTree = "<group>"; };
+		D2A9122F20854A1300FD6405 /* LapModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapModelTest.swift; sourceTree = "<group>"; };
+		D2A9123120854A4A00FD6405 /* ResultModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModelTest.swift; sourceTree = "<group>"; };
+		D2A9123320854A5800FD6405 /* WorkoutItemModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemModelTest.swift; sourceTree = "<group>"; };
+		D2A9123520854A6A00FD6405 /* WorkoutListModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListModelTest.swift; sourceTree = "<group>"; };
+		D2A9123720854A7900FD6405 /* WorkoutModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModelTest.swift; sourceTree = "<group>"; };
+		D2A9123920854A8600FD6405 /* TimerModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModelTest.swift; sourceTree = "<group>"; };
 		D2ADC7A12071D26F007CA3AC /* TimerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewCell.swift; sourceTree = "<group>"; };
 		D2ADC7A52071E54E007CA3AC /* RunTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimerViewController.swift; sourceTree = "<group>"; };
 		D2D648EB207AF4C700980820 /* WorkoutItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItemTableViewCell.swift; sourceTree = "<group>"; };
 		D2D648F2207BE33800980820 /* workoutappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workoutappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D648F4207BE33800980820 /* workoutappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutappTests.swift; sourceTree = "<group>"; };
 		D2D648F6207BE33800980820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2D648FD207BE47F00980820 /* TimerModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerModelTest.swift; path = ../../../../Downloads/TimerModelTest.swift; sourceTree = "<group>"; };
-		D2D648FF207BE4CD00980820 /* ResultModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultModelTest.swift; path = ../../../../Downloads/ResultModelTest.swift; sourceTree = "<group>"; };
-		D2D64900207BE4CD00980820 /* WorkoutItemModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutItemModelTest.swift; path = ../../../../Downloads/WorkoutItemModelTest.swift; sourceTree = "<group>"; };
-		D2D64901207BE4CD00980820 /* WorkoutModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutModelTest.swift; path = ../../../../Downloads/WorkoutModelTest.swift; sourceTree = "<group>"; };
-		D2D64902207BE4CD00980820 /* WorkoutListModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutListModelTest.swift; path = ../../../../Downloads/WorkoutListModelTest.swift; sourceTree = "<group>"; };
-		D2D64907207BE50400980820 /* LapModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LapModelTest.swift; path = ../../../../Downloads/LapModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -551,27 +551,27 @@
 			path = Workout;
 			sourceTree = "<group>";
 		};
+		D2A9122E208549FD00FD6405 /* ModelsTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2A9122F20854A1300FD6405 /* LapModelTest.swift */,
+				D2A9123120854A4A00FD6405 /* ResultModelTest.swift */,
+				D2A9123320854A5800FD6405 /* WorkoutItemModelTest.swift */,
+				D2A9123520854A6A00FD6405 /* WorkoutListModelTest.swift */,
+				D2A9123720854A7900FD6405 /* WorkoutModelTest.swift */,
+				D2A9123920854A8600FD6405 /* TimerModelTest.swift */,
+			);
+			path = ModelsTests;
+			sourceTree = "<group>";
+		};
 		D2D648F3207BE33800980820 /* workoutappTests */ = {
 			isa = PBXGroup;
 			children = (
-				D2D648FC207BE37C00980820 /* ModelsTests */,
+				D2A9122E208549FD00FD6405 /* ModelsTests */,
 				D2D648F4207BE33800980820 /* workoutappTests.swift */,
 				D2D648F6207BE33800980820 /* Info.plist */,
 			);
 			path = workoutappTests;
-			sourceTree = "<group>";
-		};
-		D2D648FC207BE37C00980820 /* ModelsTests */ = {
-			isa = PBXGroup;
-			children = (
-				D2D64907207BE50400980820 /* LapModelTest.swift */,
-				D2D648FF207BE4CD00980820 /* ResultModelTest.swift */,
-				D2D64900207BE4CD00980820 /* WorkoutItemModelTest.swift */,
-				D2D64902207BE4CD00980820 /* WorkoutListModelTest.swift */,
-				D2D64901207BE4CD00980820 /* WorkoutModelTest.swift */,
-				D2D648FD207BE47F00980820 /* TimerModelTest.swift */,
-			);
-			path = ModelsTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -777,13 +777,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2D64904207BE4CD00980820 /* WorkoutItemModelTest.swift in Sources */,
-				D2D64906207BE4CD00980820 /* WorkoutListModelTest.swift in Sources */,
+				D2A9123620854A6A00FD6405 /* WorkoutListModelTest.swift in Sources */,
+				D2A9123420854A5800FD6405 /* WorkoutItemModelTest.swift in Sources */,
 				D2D648F5207BE33800980820 /* workoutappTests.swift in Sources */,
-				D2D648FE207BE47F00980820 /* TimerModelTest.swift in Sources */,
-				D2D64908207BE50400980820 /* LapModelTest.swift in Sources */,
-				D2D64903207BE4CD00980820 /* ResultModelTest.swift in Sources */,
-				D2D64905207BE4CD00980820 /* WorkoutModelTest.swift in Sources */,
+				D2A9123020854A1300FD6405 /* LapModelTest.swift in Sources */,
+				D2A9123220854A4A00FD6405 /* ResultModelTest.swift in Sources */,
+				D2A9123A20854A8600FD6405 /* TimerModelTest.swift in Sources */,
+				D2A9123820854A7900FD6405 /* WorkoutModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
